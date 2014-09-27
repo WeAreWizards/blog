@@ -1,1 +1,4 @@
-*.un~
+*.pid
+*.pyc
+cache/
+output/

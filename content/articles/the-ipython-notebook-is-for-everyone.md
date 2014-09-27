@@ -15,14 +15,14 @@ IPython is already known from most Python developers as this Python interpreter
 more advanced than the one included with Python.
 
 In terms of features IPython can do tab completion :
+```python
+In [1]: text = "HELLO WORLD"
 
-    In [1]: text = "HELLO WORLD"
+In [2]: tetris = 2
 
-    In [2]: tetris = 2
-
-    In [3]: te<TAB>
-    tetris  text    
-
+In [3]: te<TAB>
+tetris  text    
+```
 Or explore attributes of objects :
 
     In [1]: d = {}
@@ -69,7 +69,7 @@ languages like R or ruby if you so fancy!*
 
 This is how I picture this (it somehow looks a lot prettier in my head):
 
-![IPython architecture]({filename}/images/kernel.png)
+![IPython architecture]({filename}/images/ipython/kernel.png)
 
 The IPython developers used this architecture to create various interesting
 front-ends, including the IPython notebook but I'm going to mention some of the
@@ -90,4 +90,4 @@ According to the IPython website, it is :
 
 It is a notebook similar to a regular paper-based notebook.
 
-![notebook]({filename}/images/notebook.jpg)
+![notebook]({filename}/images/ipython/notebook.jpg)
