@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="posts-list">
+    {% if articles %}
+      {% for article in articles_page.object_list %}
+        <div class="post">
+          <h2 class="post--title">
+            <a href="{{ SITEURL }}/{{ article.url }}">
+              {{ article.title }}
+            </a>
+          </h2>
+
+          <span class="post--metadata">
+            {{ article.author }} on {{ article.date|strftime('%Y-%m-%d') }}
+          </span>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock content %}

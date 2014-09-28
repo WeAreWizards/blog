@@ -3,3 +3,8 @@
 cache/
 output/
 *.un~
+.idea/
+.sass-cache/
+bin
+include
+lib

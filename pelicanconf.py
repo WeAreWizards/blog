@@ -7,6 +7,7 @@ SITENAME = u'We Are Wizards Blog'
 SITEURL = ''
 
 PATH = 'content/'
+THEME = "hogwarts"
 
 TIMEZONE = 'Europe/London'
 
@@ -17,9 +18,12 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
-
-
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+FILES_TO_COPY = (
+    ('extra/robots.txt', 'robots.txt'),
+    ('extra/favicon.ico', 'favicon.ico'),
+)

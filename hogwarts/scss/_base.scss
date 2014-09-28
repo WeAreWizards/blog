@@ -1,0 +1,21 @@
+// Breakpoints ------------------------------------------------------
+/* 0, 640px */
+$small-only: "only screen and (max-width: 40em)";
+
+// ------------------------------------------------------------------
+
+header {
+  img {
+    width: 258px;
+  }
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 16px;
+  margin: auto;
+
+  @media #{$small-only} {
+    padding: 0 10px;
+  }
+}

@@ -1,15 +1,13 @@
 Title: The IPython notebook is for everyone
 Date: 2014-09-27 10:20
 Category: python
-Author: Gautier
-status: draft
+Author: Gautier Hayoun
 
 This post is the adaptation of the presentation I gave at PyCon UK 2014.
 In this article I'd like to show what is IPython, what it is good for and why I
 think everyone should give it a try.
 
-What is IPython?
-----------------
+## What is IPython?
 
 IPython is already known from most Python developers as this Python interpreter
 more advanced than the one included with Python.
@@ -24,37 +22,38 @@ In [3]: te<TAB>
 tetris  text    
 ```
 Or explore attributes of objects :
+```python
+In [1]: d = {}
 
-    In [1]: d = {}
-    
-    In [2]: d.i
-    d.items       d.iteritems   d.iterkeys    d.itervalues  
+In [2]: d.i
+d.items       d.iteritems   d.iterkeys    d.itervalues  
+```
 
 Conveniently display documentation of functions :
-
-    In [1]: d = {}
-     
-    In [2]: d.items?
-    Type:        builtin_function_or_method
-    String form: <built-in method items of dict object at 0x7f30eb92d050>
-    Docstring:   D.items() -> list of D's (key, value) pairs, as 2-tuples
-
+```python
+In [1]: d = {}
+ 
+In [2]: d.items?
+Type:        builtin_function_or_method
+String form: <built-in method items of dict object at 0x7f30eb92d050>
+Docstring:   D.items() -> list of D's (key, value) pairs, as 2-tuples
+```
 And even execute shell commands straight from the interpreter :
 
-    In [1]: cd /
-    /
+```python
+In [1]: cd /
+/
 
-    In [2]: ls
-    bin/    etc/             lib/     lost+found/  proc/  srv/  var/
-    boot/   home/            lib32/   media/       root/  sys/  vmlinuz@
-    cdrom/  initrd.img@      lib64/   mnt/         run/   tmp/  vmlinuz.old@
-    dev/    initrd.img.old@  libx32/  opt/         sbin/  usr/
-
+In [2]: ls
+bin/    etc/             lib/     lost+found/  proc/  srv/  var/
+boot/   home/            lib32/   media/       root/  sys/  vmlinuz@
+cdrom/  initrd.img@      lib64/   mnt/         run/   tmp/  vmlinuz.old@
+dev/    initrd.img.old@  libx32/  opt/         sbin/  usr/
+```
 
 Those features make IPython a good tool to improve productivity.
 
-The IPython architecture
-------------------------
+## The IPython architecture
 
 However I believe the greatest thing about the IPython project is its
 high-level architecture.
@@ -80,8 +79,7 @@ the IPython Qt Console which features mostly the same terminal based
 interactive Python interpreter but adds support for inline plots, images and
 multiline editing.
 
-What is the IPython notebook?
------------------------------
+## What is the IPython notebook?
 
 According to the IPython website, it is :
 
