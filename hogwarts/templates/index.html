@@ -12,7 +12,7 @@
           </h2>
 
           <span class="post--metadata">
-            {{ article.author }} on {{ article.date|strftime('%Y-%m-%d') }}
+            {{ article.author }} — {{ article.date|strftime('%b %d %Y') }}
           </span>
         </div>
       {% endfor %}

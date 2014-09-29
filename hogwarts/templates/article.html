@@ -5,7 +5,7 @@
 {% block content %}
     <article>
         <h1>{{ article.title }}</h1>
-        <span class="metadata">{{ article.author }} — {{ article.date|strftime('%Y-%m-%d') }}</span>
+        <span class="metadata">{{ article.author }} — {{ article.date|strftime('%b %d %Y') }}</span>
         {{ article.content }}
     </article>
     {% if DISQUS_SITENAME %}
