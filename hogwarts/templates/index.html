@@ -5,15 +5,12 @@
     {% if articles %}
       {% for article in articles_page.object_list %}
         <div class="post">
+          <small>{{ article.date|strftime('%d %b %Y') }}</small>
           <h2 class="post--title">
             <a href="{{ SITEURL }}/{{ article.url }}">
               {{ article.title }}
             </a>
           </h2>
-
-          <span class="post--metadata">
-            {{ article.author }} — {{ article.date|strftime('%b %d %Y') }}
-          </span>
         </div>
       {% endfor %}
     {% endif %}

@@ -1,21 +1,48 @@
 // Breakpoints ------------------------------------------------------
 /* 0, 640px */
-$small-only: "only screen and (max-width: 40em)";
+$small-only: "only screen and (max-width: 500px)";
+$medium: "only screen and (max-width: 900px)";
 
 // ------------------------------------------------------------------
 
+%container {
+    width: 80%;
+    max-width: 710px;
+    margin: 4rem auto;
+    padding-bottom: 0;
+    word-break: break-word;
+    hyphens: auto;
+
+  @media #{$medium} {
+    font-size: 0.9em;
+    line-height: 1.6em;
+  }
+
+  @media #{$small-only} {
+    width: auto;
+    margin: 0 16px;
+    font-size: 0.8em;
+  }
+}
+
 header {
+  @extend %container;
+  text-align: center;
+
   img {
     width: 258px;
+  }
+
+  @media #{$small-only} {
+    margin-bottom: 50px;
   }
 }
 
 .container {
-  max-width: 50rem;
-  padding: 0 16px;
-  margin: auto;
+  @extend %container;
+}
 
-  @media #{$small-only} {
-    padding: 0 10px;
-  }
+.post {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #E7EEF2;
 }

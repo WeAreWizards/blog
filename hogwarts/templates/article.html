@@ -4,9 +4,13 @@
 
 {% block content %}
     <article>
+        <small>{{ article.date|strftime('%d %b %Y') }}</small>
         <h1>{{ article.title }}</h1>
-        <span class="metadata">{{ article.author }} — {{ article.date|strftime('%b %d %Y') }}</span>
         {{ article.content }}
+
+        <footer class="article-footer">
+            <h4>{{ article.author }}</h4>
+        </footer>
     </article>
     {% if DISQUS_SITENAME %}
         <section>

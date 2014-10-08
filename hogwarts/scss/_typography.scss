@@ -1,31 +1,80 @@
-$font-size: 16px;
+@import "base";
 
 html {
-  font-family: 'Noto Sans', serif;
+  font-family: 'Noto Serif', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.0rem;
+  line-height: 1.6em;
+  color: #3A4145;
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 5rem;
+  line-height: 1.2em;
+  letter-spacing: -2px;
+  color: black;
+
+  @media #{$medium} {
+    font-size: 4.8rem;
+    text-indent: -2px;
+  }
+
+  @media #{$small-only} {
+    font-size: 3rem;
+    line-height: 1.1em;
+    letter-spacing: -1px;
+  }
 }
 
 h2 {
-  font-size: 2.2rem;
-  line-height: 1.2;
+  font-size: 4rem;
+  line-height: 1.2em;
+  letter-spacing: -1px;
+
+  @media #{$medium} {
+    font-size: 3.8rem;
+  }
+
+  @media #{$small-only} {
+    font-size: 2.8rem;
+    line-height: 1.1em;
+    letter-spacing: -1px;
+  }
 }
 
 h1, h2, h3, h4 {
-  margin-top: 40px;
-  margin-bottom: 4px;
+  margin-top: 0;
+  text-rendering: optimizeLegibility;
+  font-family: 'Open Sans', sans-serif;
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.3rem;
-  line-height: 1.5;
+  margin: 1.6em 0;
 }
 
 pre {
   padding: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+small {
+  color: #9EABB3;
+}
+
+blockquote {
+  margin: 1.6em 0 1.6em -2.2em;
+  padding: 0 0 0 1.6em;
+  border-left: #4a4a4a 0.4em solid;
+
+  p {
+    margin: 0.8em 0;
+    font-style: italic;
+  }
 }
