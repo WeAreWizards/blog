@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'We Are Wizards'
 SITENAME = u'We Are Wizards Blog'
-SITEURL = ''
+SITEURL = 'blog.wearewizards.io'
 
 PATH = 'content/'
 THEME = "hogwarts"
