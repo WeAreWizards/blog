@@ -6,6 +6,7 @@ Author: Gautier Hayoun
 This post is the adaptation of the presentation I gave at PyCon UK 2014.
 In this article I'd like to show what is IPython, what it is good for and why I
 think everyone should give it a try.
+<!-- PELICAN_END_SUMMARY -->
 
 ## What is IPython?
 
