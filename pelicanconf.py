@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'We Are Wizards'
 SITENAME = u'We Are Wizards Blog'
-SITEURL = 'blog.wearewizards.io'
+SITEURL = 'http://localhost:8000/'
 
 PATH = 'content/'
 THEME = "hogwarts"
@@ -23,7 +23,11 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-FILES_TO_COPY = (
-    ('extra/robots.txt', 'robots.txt'),
-    ('extra/favicon.ico', 'favicon.ico'),
-)
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['gzip_cache', 'feed_summary', 'sitemap', 'summary']
+
+
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+}

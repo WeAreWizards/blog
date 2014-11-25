@@ -1,0 +1,15 @@
+{
+  "name": "hogwarts",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-sass": "~1.1.0",
+    "gulp-autoprefixer": "~2.0.0"
+  }
+}

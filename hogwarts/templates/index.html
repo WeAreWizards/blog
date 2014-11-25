@@ -11,6 +11,8 @@
               {{ article.title }}
             </a>
           </h2>
+          {{ article.summary }}
+          <a href="{{ SITEURL }}/{{ article.url }}" class="post--link">Read more »</a>
         </div>
       {% endfor %}
     {% endif %}

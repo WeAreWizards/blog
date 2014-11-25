@@ -1,5 +1,4 @@
 // Breakpoints ------------------------------------------------------
-/* 0, 640px */
 $small-only: "only screen and (max-width: 500px)";
 $medium: "only screen and (max-width: 900px)";
 
@@ -43,6 +42,21 @@ header {
 }
 
 .post {
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   border-bottom: 1px solid #E7EEF2;
+
+  h2 {
+    letter-spacing: -2px;
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .post--link {
+    display: block;
+    color: #57A3E8;
+  }
 }
