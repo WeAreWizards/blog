@@ -63,3 +63,23 @@ Apache's [first commit](https://github.com/apache/httpd/commit/5dbf830701af760e3
 Interestingly all of the [early commits](https://github.com/apache/httpd/commits/trunk?page=760) add documentation and no code. It makes no sense to document a non-existing server so the code must have been somewhere at this point. Maybe it got lost during the repository migrations?
 
 
+# Nginx
+
+Nginx [first commit](http://trac.nginx.org/nginx/changeset/0/nginx) dates from
+August 2002, but as the commit message says "The first draft ideas are dated
+back to 23.10.2001.". Mercurial has been used since the first commit.
+
+The project doesn't contain a Makefile and is not complete. However the high
+level ideas are already there.
+
+At that point nginx can only serve static files over HTTP. It handles looking
+for a index.html document if a directory is requested but not any other kind of
+URL rewrites.
+
+The memory allocation is handled centrally using a pool of memory thus reducing
+the amount of memory allocation. To this day Nginx is still very light on memory usage.
+
+The server supports FreeBSD, Linux and Win32 with their respective event queue
+implementations (kqueue, select, aio). Maybe the plugin system comes from
+having to support these multiple event queue implementations from the
+beggining?
