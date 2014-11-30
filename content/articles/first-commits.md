@@ -1,7 +1,7 @@
 Title: First commits
 Date: 2014-11-25 21:57
 Category: all
-Author: Tom
+Author: Tom, Gautier
 
 Inspired by a [recent post](https://www.reddit.com/r/programming/comments/2na7dj/gits_initial_commit/) on reddit about git's first commit I checked out the first commits for a variety of projects. Git's first commit contains a concise, fantastic description of what git is and how it works. How do other projects compare?
 
@@ -65,21 +65,25 @@ Interestingly all of the [early commits](https://github.com/apache/httpd/commits
 
 # Nginx
 
-Nginx [first commit](http://trac.nginx.org/nginx/changeset/0/nginx) dates from
-August 2002, but as the commit message says "The first draft ideas are dated
-back to 23.10.2001.". Mercurial has been used since the first commit.
+Nginx's [first commit](http://trac.nginx.org/nginx/changeset/0/nginx) dates
+from August 2002, but as the commit message says "The first draft ideas are
+dated back to 23.10.2001.". Igor Sysoev started with Subversion and switched to
+Mercurial in April 2013.
 
 The project doesn't contain a Makefile and is not complete. However the high
 level ideas are already there.
 
-At that point nginx can only serve static files over HTTP. It handles looking
-for a index.html document if a directory is requested but not any other kind of
-URL rewrites.
+The first version of nginx was only meant to serve static files over HTTP. It
+handles looking for a index.html document if a directory is requested but not
+any other kind of URL rewrites.
 
-The memory allocation is handled centrally using a pool of memory thus reducing
-the amount of memory allocation. To this day Nginx is still very light on memory usage.
+A custom pool allocator is used to keep the memory footprint low. To this day
+Nginx is still very light on memory usage.
 
 The server supports FreeBSD, Linux and Win32 with their respective event queue
 implementations (kqueue, select, aio). Maybe the plugin system comes from
 having to support these multiple event queue implementations from the
-beggining?
+beginning?
+
+This [slideshare presentation from Igor Sysoev](http://www.slideshare.net/PHPConferenceArgentina/igor-sysoev-nginx)
+contains a little more context on the origin of nginx.
