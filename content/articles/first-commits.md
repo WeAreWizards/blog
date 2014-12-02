@@ -35,9 +35,9 @@ Git's [fist commit](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23
 
 ## SQLite
 
-The [first commit](http://www.sqlite.org/cgi/src/info/704b122e5308587b60b47a5c2fff40c593d4bf8f) from May 2000 is empty and says "initial empty check-in". The [second commit](http://www.sqlite.org/cgi/src/info/6f3655f79f9b6fc9fb7baaa10a7e0f2b6a512dfa) is a code-dump. The copyright notices say 1999, 2000 so I assume what the project was started in 1999.
+The [first commit](http://www.sqlite.org/cgi/src/info/704b122e5308587b60b47a5c2fff40c593d4bf8f) from May 2000 is empty and says "initial empty check-in". The [second commit](http://www.sqlite.org/cgi/src/info/6f3655f79f9b6fc9fb7baaa10a7e0f2b6a512dfa) is a code-dump. The copyright notices say 1999, 2000 so I assume that the project was started in 1999.
 
-Interestingly the code that was licensed as GPL2 back then is now in the public domain. I did not discover at what point the license changed.
+Interestingly, SQLite is in the public domain but the initial version was licensed as GPLv2. I did not discover at what point the license changed.
 
 
 ##  Python
@@ -56,7 +56,7 @@ Kernel Newbies have written a nice [walk-through](http://kernelnewbies.org/Kerne
 
 # Docker
 
-Docker's first commit is from 2013. It never migrated from one version control system to another, and not using using version control in 2013 would expose your project to ridicule.
+Docker's first commit is from 2013. It never migrated from one version control system to another, and not using using version control in 2013 would expose your project to ridicule. I.e. I was expecting a fairly clean start.
 
 The code started as an internal project within dotCloud but was quickly moved to github. The [initial commit](https://github.com/docker/docker/commit/a27b4b8cb8e838d03a99b6d2b30f76bdaf2f9e5d) is a code-dump tagged as `0.0.3`.
 
@@ -87,20 +87,20 @@ Mercurial in April 2013.
 The project doesn't contain a Makefile and is not complete. However the high
 level ideas are already there.
 
-The first version of Nginx was only meant to serve static files over HTTP. It
-handles looking for a index.html document if a directory is requested but not
-any other kind of URL rewrites.
+The first version of Nginx was only meant to serve static files over
+HTTP. It looks for an `index.html` document if it sees a directory,
+but doesn't support any other forms of URL rewriting.
 
 A custom pool allocator is used to keep the memory footprint low. To this day
 Nginx is still very light on memory usage.
 
-The server supports FreeBSD, Linux and Win32 with their respective event queue
-implementations (kqueue, select, aio). Maybe the plugin system comes from
-having to support these multiple event queue implementations from the
-beginning?
+The early code already supports FreeBSD, Linux and Win32 with their
+respective event queue implementations (kqueue, select, aio). Maybe
+the plugin system comes from having to support these multiple event
+queue implementations from the beginning?
 
 This [slideshare presentation from Igor Sysoev](http://www.slideshare.net/PHPConferenceArgentina/igor-sysoev-nginx)
-contains a little more context on the origin of Nginx.
+contains a more information on the origin of Nginx.
 
 
 # Django
