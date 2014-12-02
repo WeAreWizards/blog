@@ -2,6 +2,7 @@ Title: The IPython notebook is for everyone
 Date: 2014-09-27 10:20
 Category: python
 Author: Gautier Hayoun
+Status: draft
 
 This post is the adaptation of the presentation I gave at PyCon UK 2014.
 In this article I'd like to show what is IPython, what it is good for and why I
@@ -20,20 +21,20 @@ In [1]: text = "HELLO WORLD"
 In [2]: tetris = 2
 
 In [3]: te<TAB>
-tetris  text    
+tetris  text
 ```
 Or explore attributes of objects :
 ```python
 In [1]: d = {}
 
 In [2]: d.i
-d.items       d.iteritems   d.iterkeys    d.itervalues  
+d.items       d.iteritems   d.iterkeys    d.itervalues
 ```
 
 Conveniently display documentation of functions :
 ```python
 In [1]: d = {}
- 
+
 In [2]: d.items?
 Type:        builtin_function_or_method
 String form: <built-in method items of dict object at 0x7f30eb92d050>
