@@ -47,21 +47,21 @@ Python has [several first commits](https://hg.python.org/cpython-fullhistory/sho
 People familiar with the project will recognize several components that have not changed in 25 years such as the `Lib` directory. See e.g. [this commit](https://hg.python.org/cpython-fullhistory/rev/5570dbb1ce55).
 
 
-# Linux kernel
+## Linux kernel
 
 The full Linux history was re-assembled from three sources by Yoann Padioleau and can be found on [archive.org](https://archive.org/details/git-history-of-linux). There isn't really a first commit as such because Linus Torvalds released versioned tarballs on an ftp server that's [still around](ftp://www.nic.funet.fi/).
 
 Kernel Newbies have written a nice [walk-through](http://kernelnewbies.org/Kernel001WalkThrough) of the first release so I'm going to stop here.
 
 
-# Docker
+## Docker
 
 Docker's first commit is from 2013. It never migrated from one version control system to another, and not using using version control in 2013 would expose your project to ridicule. I.e. I was expecting a fairly clean start.
 
 The code started as an internal project within dotCloud but was quickly moved to github. The [initial commit](https://github.com/docker/docker/commit/a27b4b8cb8e838d03a99b6d2b30f76bdaf2f9e5d) is a code-dump tagged as `0.0.3`.
 
 
-# Xen
+## Xen
 
 Xen is famous for running Amazon's ec2 infrastructure. The [first commit](http://xenbits.xen.org/gitweb/?p=xen.git;a=commit;h=93081dee186d6bb3e1ede0a179085b8504846896) is from 1970, which is of course a lie and likely an artifact of moving from bitkeeper to mercurial.
 
@@ -70,14 +70,14 @@ The first [substantial commit](http://xenbits.xen.org/gitweb/?p=xen.git;a=commit
 The commit also contains a custom Linux called `xenolinux` which was developed for running efficiently on a Xen hypervisor.
 
 
-# Apache
+## Apache
 
 Apache's [first commit](https://github.com/apache/httpd/commit/5dbf830701af760e37e1e2c26212c34220516d85) hints at a migration from CVS to SVN at some point.
 
 Interestingly all of the [early commits](https://github.com/apache/httpd/commits/trunk?page=760) add documentation and no code. It makes no sense to document a non-existing server so the code must have been somewhere at this point. Maybe it got lost during the repository migrations?
 
 
-# Nginx
+## Nginx
 
 Nginx's [first commit](http://trac.nginx.org/nginx/changeset/0/nginx) dates
 from August 2002, but as the commit message says "The first draft ideas are
@@ -103,8 +103,13 @@ This [slideshare presentation from Igor Sysoev](http://www.slideshare.net/PHPCon
 contains a more information on the origin of Nginx.
 
 
-# Django
+## Django
 
 Django's [first commit](https://github.com/django/django/commit/d6ded0e91bcdd2a8f7a221f6a5552a33fe545359) from 2005 is empty. Checking the [second](https://github.com/django/django/commit/07ffc7d605cc96557db28a9e35da69bc0719611b) and [third](https://github.com/django/django/commit/ed114e15106192b22ebb78ef5bf5bce72b419d13) commit shows that this is an import from a private repository. This makes sense because the project started as the internal tool for the [Lawrence Journal-World](http://en.wikipedia.org/wiki/Lawrence_Journal-World) newspaper.
 
 The order of of commits is mildly interesting: The first substantial commit is documentation. Documentation is a focus and a strength of the Django project to this day.
+
+
+## Conclusion
+
+Most first commits are dumps of existing projects, including the fairly recent Docker. In some cases the projects started as private code, in other cases it looks like some data was lost when migrating to a new revision control system or just because revision control wasn't really a thing in 1990.
