@@ -1,0 +1,13 @@
+<div class="post">
+    <span class="date">{{ article.date|strftime('%d %b %Y') }}</span>
+    <h2 class="post--title">
+        <a href="{{ SITEURL }}/{{ article.url }}">
+            {{ article.title }}
+        </a>
+    </h2>
+    {% if show_summary %}
+        <div class="post--summary">
+            {{ article.summary }}
+        </div>
+    {% endif %}
+</div>

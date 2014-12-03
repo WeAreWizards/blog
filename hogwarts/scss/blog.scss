@@ -1,10 +1,22 @@
 @charset "UTF-8";
 
+* {
+  box-sizing: border-box;
+}
+
+@import "variables";
+
+// Typography stuff
+$font-family-body: 'Noto Serif', serif;
+$font-family-titles: 'Montserrat', sans-serif;
+$blockquote-border-colour: $darker-green;
 
 // Normalize to standardize things a bit
 @import "normalize";
 @import "typography";
+@import "fonts";
 
 @import "base";
-@import "solarized-light";
+@import "solarized";
+@import "posts";
 @import "article";

@@ -5,7 +5,8 @@
 
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
+    <meta name="description" content="We Are Wizards Blog" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 
     {% if FEED_ALL_ATOM %}
@@ -15,7 +16,7 @@
       <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
 
-    <link href='//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Montserrat:700,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css" />
 
     {% if GOOGLE_ANALYTICS %}
@@ -29,16 +30,54 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
+    {% block meta %}{% endblock meta %}
   </head>
 
   <body>
     <header>
-        <a href="{{ SITEURL }}"><img src="{{ SITEURL }}/theme/images/logo_small.png" alt="Logo" /></a>
+        <div class="logo">
+          <a href="https://wearewizards.io"><img src="{{ SITEURL }}/theme/images/logo_small.png" alt="Logo" /></a>
+        </div>
+        <div class="links">
+          <a href="{{ SITEURL }}">Blog</a>
+        </div>
     </header>
 
     <div class="container">
+      {% if not article %}
+        {% include "_subheader.html" %}
+      {% else %}
+          <div class="back-to-index">
+              <a href="{{ SITEURL }}">❮ Back to index</a>
+          </div>
+      {% endif %}
       {% block content %}{%endblock%}
     </div>
+
+    <footer>
+      <div>
+        <h2>Say Hi!</h2>
+
+          <p class="intro">
+              Let's grab a coffee while we talk about your next project.
+              <br/>
+              You can contact us at <a href="mailto:team@wearewizards.io">team@wearewizards.io</a>
+              <br/><br/>
+
+            <span class="social">
+                <a href="https://github.com/WeAreWizards" target="_blank"><i class="icon-github"></i></a>
+                <a href="https://twitter.com/WeAreWizardsIO" target="_blank"><i class="icon-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/we-are-wizards" target="_blank"><i class="icon-linkedin"></i></a>
+                <a href="{{ SITEURL }}/all.atom.xml" target="_blank" type="application/rss+xml" rel="alternate"><i class="icon-rss"></i></a>
+            </span>
+          </p>
+
+        <div class="logo">
+          <img src="{{ SITEURL }}/theme/images/logo_white.png" alt="Logo"/>
+        </div>
+      </div>
+    </footer>
   </body>
 
 </html>

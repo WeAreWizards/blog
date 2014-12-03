@@ -1,0 +1,12 @@
+<div class="subheader">
+    <h1><span class="green">We Are</span> Writing</h1>
+    <p class="description">
+      A tech agency in London writing about what we love.
+    </p>
+    <ul>
+      <li {%- if output_file.startswith("index") %} class="selected"{% endif %}><a href="{{ SITEURL }}">Index</a></li>
+      <li {%- if output_file.startswith("archive") %} class="selected"{% endif %}>
+        <a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">Archives</a>
+      </li>
+    </ul>
+</div>

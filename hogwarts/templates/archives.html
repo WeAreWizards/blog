@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="posts-list">
+    {% set show_summary = False %}
+    {% for article in dates %}
+        {% include "_post_in_list.html" %}
+    {% endfor %}
+  </div>
+{% endblock content %}

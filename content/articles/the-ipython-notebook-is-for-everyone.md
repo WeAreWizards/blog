@@ -1,7 +1,9 @@
 Title: The IPython notebook is for everyone
 Date: 2014-09-27 10:20
-Category: python
-Author: Gautier Hayoun
+Category: Tech
+Tags: python, ipython, random, misc
+Authors: Gautier, Tom
+Short_summary: To be deleted
 
 This post is the adaptation of the presentation I gave at PyCon UK 2014.
 In this article I'd like to show what is IPython, what it is good for and why I
