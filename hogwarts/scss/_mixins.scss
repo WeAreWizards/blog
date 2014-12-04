@@ -1,0 +1,110 @@
+@import "media-queries";
+
+// This stuff is straight from the website scss, with some minor changes/additions
+
+@mixin retina-image($width, $resize: true) {
+  width: $width;
+
+  @if $resize {
+    @media #{$medium-only} {
+      width: $width * 0.7;
+    }
+
+    @media #{$small-only} {
+      width: $width * 0.5;
+    }
+  }
+}
+
+@mixin section($background-color: transparent) {
+  background: $background-color;
+  padding: 2em 4em 5em 4em;
+
+  h2 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .intro {
+    text-align: center;
+    font-size: 1.2rem;  // Bit smaller than on website
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+
+    @media #{$small-only} {
+      margin-bottom: 2rem;
+    }
+
+    @if $background-color == $green {
+      color: #274a3c;
+    } @else {
+      color: #515151;
+    }
+  }
+
+  @media #{$medium-only} {
+    padding: 2em;
+  }
+
+  @media #{$small-only} {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@mixin links($color: $darker-grey, $hover-color: black) {
+  color: $color;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+    transition: all .3s ease-in-out;
+  }
+}
+
+@mixin inline-list($spacing: 1rem) {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+
+  & > li {
+    list-style: none;
+    display: inline-block;
+    margin-right: $spacing;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin media-object() {
+  display: flex;
+  align-items: flex-start;
+
+  .author__figure {
+    margin-right: 1rem;
+  }
+
+  .author__content {
+    flex: 1;
+  }
+
+  &--centered {
+    align-items: center;
+  }
+}
+
+@mixin container() {
+  max-width: 710px; // Smaller than on the website, for reading purpose
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+
+  @media #{$small-only} {
+    padding: 0 1rem;
+  }
+}

@@ -1,80 +1,97 @@
-@import "base";
+@import "media-queries";
+
+$font-family-body: 'Noto Serif', sans-serif !default;
+$font-family-titles: 'Open Sans', sans-serif !default;
+$base-font-size: 100% !default;
+$blockquote-border-colour: black !default;
+
+// Used by most elements to have a consistent margin
+$base-margin: 1.4rem !default;
+
 
 html {
-  font-family: 'Noto Serif', sans-serif;
-  font-size: 62.5%;
+  font-family: $font-family-body;
+  font-size: $base-font-size;
+  line-height: 1.5;
 }
 
-body {
-  font-size: 2.0rem;
-  line-height: 1.6em;
-  color: #3A4145;
+h1, h2, h3, h4 {
+  font-family: $font-family-titles;
+  margin-bottom: 0;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-size: 5rem;
-  line-height: 1.2em;
-  letter-spacing: -2px;
-  color: black;
-
-  @media #{$medium} {
-    font-size: 4.8rem;
-    text-indent: -2px;
-  }
-
-  @media #{$small-only} {
-    font-size: 3rem;
-    line-height: 1.1em;
-    letter-spacing: -1px;
+  font-size: 2.1rem;
+  @media #{$medium-up} {
+    font-size: 2.8rem;
   }
 }
 
 h2 {
-  font-size: 4rem;
-  line-height: 1.2em;
-  letter-spacing: -1px;
-
-  @media #{$medium} {
-    font-size: 3.8rem;
-  }
-
-  @media #{$small-only} {
-    font-size: 2.8rem;
-    line-height: 1.1em;
-    letter-spacing: -1px;
+  font-size: 1.7rem;
+  @media #{$medium-up} {
+    font-size: 2.3rem;
   }
 }
 
-h1, h2, h3, h4 {
-  margin-top: 0;
-  text-rendering: optimizeLegibility;
-  font-family: 'Open Sans', sans-serif;
+h3 {
+  font-size: 1.4rem;
+  @media #{$medium-up} {
+    font-size: 1.7rem;
+  }
 }
 
-p {
-  margin: 1.6em 0;
+h4 {
+  font-size: 1.1rem;
+  @media #{$medium-up} {
+    font-size: 1.4rem;
+  }
 }
 
-pre {
-  padding: 10px;
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+
+p, ul, ol {
+  margin: $base-margin 0 0;
 }
 
 a {
-  color: black;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: inherit;
+  }
 }
 
-small {
-  color: #9EABB3;
-}
+hr { margin: $base-margin 0; }
 
 blockquote {
-  margin: 1.6em 0 1.6em -2.2em;
-  padding: 0 0 0 1.6em;
-  border-left: #4a4a4a 0.4em solid;
+  margin: $base-margin;
+  margin-left: 0;
+  padding-left: $base-margin;
+  border-left: $blockquote-border-colour 0.4rem solid;
 
   p {
-    margin: 0.8em 0;
     font-style: italic;
+  }
+
+  cite {
+    font-style: normal;
+
+    &:before {
+      content: "\2014 \00A0"; // em dash
+    }
   }
 }

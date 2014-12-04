@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <h3 class="separated-content">Articles tagged <span class="green">{{ tag }}</span></h3>
   <div class="posts-list">
     {% set show_summary = True %}
-    {% for article in articles_page.object_list %}
+    {% for article in articles %}
       {% include "_post_in_list.html" %}
     {% endfor %}
   </div>
