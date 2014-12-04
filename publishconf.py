@@ -21,3 +21,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 DISQUS_SITENAME = "wearewizards"
 GOOGLE_ANALYTICS = "UA-57056653-2"
+
+# Cleaner URLs:
+ARTICLE_URL = '{slug}'
+ARTICLE_SAVE_AS = '{slug}.html'
