@@ -122,6 +122,18 @@ header {
   margin-bottom: 2rem;
 }
 
+.category {
+  color: $darker-green;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+
+  a {
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
 footer {
   @include section($green);
   font-family: "Montserrat", sans-serif;

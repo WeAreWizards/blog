@@ -1,5 +1,6 @@
 <div class="post">
-    <span class="date">{{ article.date|strftime('%d %b %Y') }}</span>
+    <span class="date">{{ article.date|strftime('%d %b %Y') }}, </span>
+    <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
     <h2 class="post--title">
         <a href="{{ SITEURL }}/{{ article.url }}">
             {{ article.title }}
