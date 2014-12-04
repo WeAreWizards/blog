@@ -15,17 +15,6 @@ article {
     font-family: "Montserrat", sans-serif;
   }
 
-  .category {
-    a {
-      color: $darker-green;
-
-      &:hover {
-        color: $green;
-      }
-    }
-    text-transform: uppercase;
-  }
-
   .article--content, .article--sharing, .article--tags, .article--authors {
     margin-top: 4rem;
     @media #{$small-only} {
