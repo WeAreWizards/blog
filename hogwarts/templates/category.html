@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3 class="separated-content">Articles in <span class="green">{{ category }}</span></h3>
+    <h3 class="separated-content">Articles in <span class="category">{{ category }}</span></h3>
   <div class="posts-list">
     {% set show_summary = True %}
     {% for article in articles %}
