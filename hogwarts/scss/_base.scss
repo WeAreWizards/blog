@@ -1,66 +1,178 @@
-// Breakpoints ------------------------------------------------------
-$small-only: "only screen and (max-width: 500px)";
-$medium: "only screen and (max-width: 900px)";
+@import "mixins";
+@import "variables";
 
-// ------------------------------------------------------------------
 
-%container {
-    width: 80%;
-    max-width: 710px;
-    margin: 4rem auto;
-    padding-bottom: 0;
-    word-break: break-word;
-    hyphens: auto;
-
-  @media #{$medium} {
-    font-size: 0.9em;
-    line-height: 1.6em;
-  }
-
-  @media #{$small-only} {
-    width: auto;
-    margin: 0 16px;
-    font-size: 0.8em;
-  }
+html, body {
+  height: 100%;
+  background: $grey;
 }
 
 header {
-  @extend %container;
-  text-align: center;
+  width: 100%;
+  top: 0;
+  background: white;
+  opacity: .9;
+  box-shadow: rgba(153, 153, 153, 0.75) 0 0 3px 0;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 3rem;
+  padding-left: 0;
 
-  img {
-    width: 258px;
+  .logo {
+    float: left;
+
+    img {
+      @include retina-image(258px, false);
+    }
+  }
+
+  .links {
+    float: right;
+    margin-right: 4rem;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    a {
+      color: #747474;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    @media #{$small-only} {
+      display: none;
+    }
+  }
+}
+
+.green {
+  color: $darker-green;
+}
+
+.date {
+  color: $darker-grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+// Only shown on article pages
+.back-to-index {
+  margin: 5rem 0;
+  text-align: left;
+  text-transform: uppercase;
+  color: $darker-grey;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+
+  a:hover {
+    color: black;
   }
 
   @media #{$small-only} {
-    margin-bottom: 50px;
+    margin: 2rem 0;
+  }
+}
+
+.subheader {
+  margin: 5rem 0;
+  font-family: "Montserrat", sans-serif;
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: $darker-grey;
+    border-bottom: 1px solid $separator;
+    padding-bottom: 3rem;
+  }
+
+  ul {
+    @include inline-list(2rem);
+    padding-top: 1rem;
+
+    li + li:before {
+      content: " ● ";
+      padding-right: 2rem;
+      color: scale-color($darker-grey, $lightness: 50%);
+    }
+
+    li {
+      a {
+        color: $darker-grey;
+        &:hover {
+          color: black;
+        }
+
+      }
+      text-transform: uppercase;
+      font-weight: bold;
+
+      &.selected {
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.separated-content {
+  margin-bottom: 2rem;
+}
+
+footer {
+  @include section($green);
+  font-family: "Montserrat", sans-serif;
+    // need to put back to top at the bottom
+  padding-bottom: 0 !important;
+
+  a {
+    @include links(white);
+  }
+
+  .logo img {
+    @include retina-image(212px, false);
+    margin-bottom: 2rem;
+  }
+
+  &>div {
+    @include container;
+  }
+
+  .social {
+    font-size: 2rem;
+    a {
+      color: $darker-grey;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  .intro {
+    margin-bottom: 2rem;
   }
 }
 
 .container {
-  @extend %container;
+  @include container;
 }
 
-.post {
-  padding-bottom: 3rem;
-  border-bottom: 1px solid #E7EEF2;
+.tag {
+  border-radius: .25rem;
+  background-color: $darker-green;
+  cursor: pointer;
+  padding: .3rem .8rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: .9rem;
+  margin-right: .5rem;
 
-  h2 {
-    letter-spacing: -2px;
-    font-size: 5rem;
-    margin-bottom: 0;
-  }
-
-  p {
-    margin-bottom: 0;
-
-    a {
-     color: #57A3E8;
-    }
-  }
-
-  .post--link {
-    display: block;
-    color: #57A3E8;
+  &:hover {
+    background-color: $green;
   }
 }

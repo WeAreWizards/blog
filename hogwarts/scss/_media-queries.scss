@@ -1,0 +1,16 @@
+//-------------------- Media queries --------------------//
+
+// Breakpoints from Foundation
+// 0 - 640px = small
+// 641 - 1024 = medium
+// 1024+ = large
+$small-up: "only screen" !default;
+$small-only: "only screen and (max-width: 640px)" !default;
+
+$medium-up: "only screen and (min-width: 641px)" !default;
+$medium-only: "only screen and (min-width: 641px) and (max-width: 1024px)" !default;
+
+$large-up: "only screen and (min-width: 1025px)" !default;
+$large-only: "only screen and (min-width: 1025px) and (max-width: 99999px)" !default;
+
+$retina: "only screen and (min-device-pixel-ratio: 1.1)" !default;

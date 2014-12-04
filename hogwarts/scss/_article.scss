@@ -1,20 +1,134 @@
-article {
-  margin-top: 5rem;
+@import "variables";
+@import "mixins";
 
-  img {
-    display: block;
-    margin: auto;
+
+article {
+  margin-bottom: 4rem;
+
+  .article--title {
+    border-bottom: 1px solid $separator;
+    padding-bottom: 3rem;
   }
-  p {
+
+  .article--metadata {
+    padding-top: 1rem;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .category {
     a {
-     color: #57A3E8;
+      color: $darker-green;
+
+      &:hover {
+        color: $green;
+      }
+    }
+    text-transform: uppercase;
+  }
+
+  .article--content, .article--sharing, .article--tags, .article--authors {
+    margin-top: 4rem;
+    @media #{$small-only} {
+      margin-top: 2rem;
     }
   }
 
-}
+  .article--content {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
 
-.article-footer {
-  margin: 4rem 0 0 0;
-  padding: 4rem 0 0 0;
-  border-top: #EBF2F6 1px solid;
+  pre {
+    padding: 1rem;
+  }
+
+  .article--sharing {
+    border-top: 1px solid $separator;
+    border-bottom: 1px solid $separator;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+
+    ul {
+      @include inline-list(2rem);
+      li + li:before {
+        content: " ● ";
+        padding-right: 2rem;
+        color: scale-color($darker-grey, $lightness: 50%);
+      }
+
+      a {
+        color: $darker-grey;
+
+        &:hover {
+          color: $darker-green;
+        }
+      }
+    }
+
+    @media #{$small-only} {
+      ul {
+        li {
+          display: block;
+          margin-right: 0;
+        }
+        li + li:before {
+          content: "";
+          padding-right: 0;
+        }
+      }
+
+    }
+  }
+
+  .article--tags {
+    text-align: left;
+
+    a {
+      display: inline-block;
+      margin-bottom: .7rem;
+    }
+  }
+
+  .article--authors {
+    text-align: left;
+    border-bottom: 1px solid $separator;
+
+    .written-by {
+      text-transform: uppercase;
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 2rem;
+    }
+
+    .author {
+      @include media-object;
+      margin-bottom: 2rem;
+
+      img {
+        border-radius: 50rem;
+        width: 100px;
+      }
+
+      h4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .author__content {
+        font-size: 1rem;
+
+        a {
+          color: $darker-grey;
+          vertical-align: middle;
+        }
+
+        a:hover {
+          color: black;
+        }
+      }
+
+    }
+  }
 }

@@ -1,0 +1,31 @@
+@import "variables";
+
+// Style for posts as a list
+
+.post {
+  text-align: left;
+  margin-bottom: 3rem;
+
+  .post--title {
+    margin-top: .5rem;
+
+    a {
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .post--summary p {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    color: $darker-grey;
+    line-height: 1.8;
+  }
+}
+
+.posts-list {
+  margin-bottom: 5rem;
+}

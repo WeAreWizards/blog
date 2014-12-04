@@ -2,15 +2,68 @@
 
 {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 
+{% block meta %}
+    <meta name="description" content="{{ article.short_summary }}" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@WeAreWizardsIO">
+    <meta name="twitter:title" content="{{ article.title }}">
+    <meta name="twitter:description" content="{{ article.short_summary }}">
+    <meta name="twitter:creator" content="@WeAreWizardsIO">
+
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ article.url }}" />
+    <meta property="og:description" content="{{ article.short_summary }}" />
+    <meta property="og:site_name" content="We Are Wizards" />
+{% endblock meta %}
+
 {% block content %}
     <article>
-        <small>{{ article.date|strftime('%d %b %Y') }}</small>
-        <h1>{{ article.title }}</h1>
-        {{ article.content }}
+        <h1 class="article--title">{{ article.title }}</h1>
+        <div class="article--metadata">
+            <span class="date">{{ article.date|strftime('%d %b %Y') }}, </span>
+            <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+        </div>
 
-        <footer class="article-footer">
-            <h4>{{ article.author }}</h4>
-        </footer>
+        <div class="article--content">
+            {{ article.content }}
+        </div>
+
+        <div class="article--sharing">
+            <ul>
+                <li><a href="{{article.share_post['twitter']}}" target="_blank" title="Share on Twitter">Share on Twitter</a></li>
+                <li><a href="{{article.share_post['facebook']}}" target="_blank" title="Share on Facebook">Share on Facebook</a></li>
+            </ul>
+        </div>
+
+        <div class="article--tags">
+            {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}"><span class="tag">{{ tag }}</span></a>
+            {% endfor %}
+        </div>
+
+        <div class="article--authors">
+            <span class="written-by">Written by:</span>
+            {% for name, author in AUTHORS_INFO.iteritems() %}
+                {% if name in article.authors %}
+                    <div class="author">
+                        <img src="{{ author.pic }}" class="author__figure"/>
+                        <div class="author__content">
+                            <h4>{{ author.name }}</h4>
+                            <div>
+                                <a href="{{ author.github }}" target="_blank">
+                                    <i class="icon-github"></i>
+                                </a>
+                                <a href="{{ author.linkedin }}" target="_blank">
+                                    <i class="icon-linkedin"></i>
+                                </a>
+                        </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </article>
 
     {% if DISQUS_SITENAME %}
