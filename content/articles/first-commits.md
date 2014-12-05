@@ -4,7 +4,7 @@ Category: Misc
 Authors: Tom, Gautier
 Short_summary: We investigate the first commits of several old and well-known open-source projects
 
-Inspired by a [recent post](https://www.reddit.com/r/programming/comments/2na7dj/gits_initial_commit/) on reddit about git's first commit I checked out the first commits for a variety of projects. Git's first commit contains a concise, fantastic description of what git is and how it works. How do other projects compare?
+Inspired by a [recent post](https://www.reddit.com/r/programming/comments/2na7dj/gits_initial_commit/) on reddit about Git's first commit I checked out the first commits for a variety of projects. Git's first commit contains a concise, fantastic description of what Git is and how it works. How do other projects compare?
 
 Beginnings are always interesting because well-known projects do not
 yet have the status they'll achieve many years later. The lack of
@@ -29,7 +29,7 @@ PostgreSQL's [first commit](https://github.com/postgres/postgres/commit/d31084e9
 
 ## Git
 
-Git's [fist commit](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290) was already discussed in depth in many places. I have fond memories of it because the description got me started on git fairly early. It was so nice that it convinced me instantly, despite being a real brain twister at the time.
+Git's [fist commit](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290) was already discussed in depth in many places. I have fond memories of it because the description got me started on Git fairly early. It was so nice that it convinced me instantly, despite being a real brain twister at the time.
 
 
 ## SQLite
