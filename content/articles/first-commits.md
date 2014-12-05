@@ -1,11 +1,10 @@
 Title: First commits
-Date: 2014-11-25 21:57
-Category: all
+Date: 2014-11-25
+Category: Misc
 Authors: Tom, Gautier
+Short_summary: We investigate the first commits of several old and well-known open-source projects
 
 Inspired by a [recent post](https://www.reddit.com/r/programming/comments/2na7dj/gits_initial_commit/) on reddit about git's first commit I checked out the first commits for a variety of projects. Git's first commit contains a concise, fantastic description of what git is and how it works. How do other projects compare?
-
-<!-- PELICAN_END_SUMMARY -->
 
 Beginnings are always interesting because well-known projects do not
 yet have the status they'll achieve many years later. The lack of

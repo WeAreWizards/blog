@@ -36,7 +36,7 @@
       margin-bottom: 2rem;
     }
 
-    @if $background-color == $green {
+    @if $background-color == $light-green {
       color: #274a3c;
     } @else {
       color: #515151;
@@ -54,7 +54,7 @@
   }
 }
 
-@mixin links($color: $darker-grey, $hover-color: black) {
+@mixin links($color: $dark-green, $hover-color: black) {
   color: $color;
   font-weight: bold;
   text-decoration: none;
@@ -79,6 +79,14 @@
       margin-right: 0;
     }
   }
+}
+
+@mixin round-list-separator() {
+    li + li:before {
+      content: " ● ";
+      padding-right: 2rem;
+      color: #A9A9A9;
+    }
 }
 
 @mixin media-object() {

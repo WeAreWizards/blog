@@ -5,6 +5,12 @@
 html, body {
   height: 100%;
   background: $grey;
+  color: $text-grey;
+  font-family: "Montserrat", sans-serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+  }
 }
 
 header {
@@ -30,7 +36,6 @@ header {
     float: right;
     margin-right: 4rem;
     text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     a {
       color: #747474;
@@ -47,12 +52,7 @@ header {
 }
 
 .green {
-  color: $darker-green;
-}
-
-.date {
-  color: $darker-grey;
-  font-family: "Montserrat", sans-serif;
+  color: $green;
 }
 
 // Only shown on article pages
@@ -60,8 +60,6 @@ header {
   margin: 5rem 0;
   text-align: left;
   text-transform: uppercase;
-  color: $darker-grey;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
 
   a:hover {
@@ -75,7 +73,6 @@ header {
 
 .subheader {
   margin: 5rem 0;
-  font-family: "Montserrat", sans-serif;
 
   h1 {
     text-transform: uppercase;
@@ -83,7 +80,7 @@ header {
 
   p {
     font-size: 1.4rem;
-    color: $darker-grey;
+    color: $text-grey;
     border-bottom: 1px solid $separator;
     padding-bottom: 3rem;
   }
@@ -91,18 +88,12 @@ header {
   ul {
     @include inline-list(2rem);
     padding-top: 1rem;
-
-    li + li:before {
-      content: " ● ";
-      padding-right: 2rem;
-      color: scale-color($darker-grey, $lightness: 50%);
-    }
+    @include round-list-separator;
 
     li {
       a {
-        color: $darker-grey;
         &:hover {
-          color: black;
+          color: $green;
         }
 
       }
@@ -123,8 +114,7 @@ header {
 }
 
 footer {
-  @include section($green);
-  font-family: "Montserrat", sans-serif;
+  @include section($light-green);
     // need to put back to top at the bottom
   padding-bottom: 0 !important;
 
@@ -143,8 +133,10 @@ footer {
 
   .social {
     font-size: 2rem;
+    margin: 3rem 0;
+    display: block;
     a {
-      color: $darker-grey;
+      color: $dark-green;
 
       &:hover {
         color: black;
@@ -163,16 +155,27 @@ footer {
 
 .tag {
   border-radius: .25rem;
-  background-color: $darker-green;
+  background-color: $green;
   cursor: pointer;
   padding: .3rem .8rem;
   color: white;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
   font-size: .9rem;
   margin-right: .5rem;
 
   &:hover {
-    background-color: $green;
+    background-color: $light-green;
+  }
+}
+
+.category {
+  color: $green;
+  text-transform: uppercase;
+
+  a {
+    color: scale_color($green, $lightness: -20%);
+    &:hover {
+      color: $green;
+    }
   }
 }

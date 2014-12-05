@@ -21,8 +21,16 @@
   .post--summary p {
     margin-top: .5rem;
     font-size: 1.2rem;
-    color: $darker-grey;
     line-height: 1.8;
+    font-family: 'Noto Serif', serif;
+
+    a {
+      color: scale_color($green, $lightness: -20%);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 

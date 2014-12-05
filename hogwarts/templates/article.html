@@ -22,7 +22,7 @@
     <article>
         <h1 class="article--title">{{ article.title }}</h1>
         <div class="article--metadata">
-            <span class="date">{{ article.date|strftime('%d %b %Y') }}, </span>
+            <span class="date">{{ article.date|strftime('%d %b %Y') }} — </span>
             <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
         </div>
 

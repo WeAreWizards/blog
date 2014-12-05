@@ -15,17 +15,6 @@ article {
     font-family: "Montserrat", sans-serif;
   }
 
-  .category {
-    a {
-      color: $darker-green;
-
-      &:hover {
-        color: $green;
-      }
-    }
-    text-transform: uppercase;
-  }
-
   .article--content, .article--sharing, .article--tags, .article--authors {
     margin-top: 4rem;
     @media #{$small-only} {
@@ -37,6 +26,15 @@ article {
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.8;
+    font-family: 'Noto Serif', serif;
+
+    a {
+      color: scale_color($green, $lightness: -20%);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   pre {
@@ -52,17 +50,13 @@ article {
 
     ul {
       @include inline-list(2rem);
-      li + li:before {
-        content: " ● ";
-        padding-right: 2rem;
-        color: scale-color($darker-grey, $lightness: 50%);
-      }
+      @include round-list-separator;
 
       a {
-        color: $darker-grey;
+        color: $text-grey;
 
         &:hover {
-          color: $darker-green;
+          color: $green;
         }
       }
     }
@@ -120,7 +114,7 @@ article {
         font-size: 1rem;
 
         a {
-          color: $darker-grey;
+          color: $text-grey;
           vertical-align: middle;
         }
 

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'We Are Wizards'
 SITENAME = u'We Are Wizards Blog'
-SITEURL = 'http://localhost:8000/'
+SITEURL = 'http://localhost:8000'
 
 PATH = 'content/'
 THEME = "hogwarts"
@@ -16,7 +16,12 @@ DEFAULT_LANG = u'en'
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 TRANSLATION_FEED_ATOM = None
+
+AUTHOR_URL = ''
+AUTHOR_SAVE_AS = ''
 
 DEFAULT_PAGINATION = False
 
@@ -24,7 +29,7 @@ DEFAULT_PAGINATION = False
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['gzip_cache', 'feed_summary', 'sitemap', 'summary', 'share_post']
+PLUGINS = ['gzip_cache', 'feed_summary', 'sitemap', 'share_post']
 
 SITEMAP = {
     'format': 'xml',
