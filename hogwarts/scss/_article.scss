@@ -53,10 +53,10 @@ article {
       @include round-list-separator;
 
       a {
-        color: $text-grey;
+        color: $grey;
 
         &:hover {
-          color: $green;
+          color: black;
         }
       }
     }
@@ -114,7 +114,7 @@ article {
         font-size: 1rem;
 
         a {
-          color: $text-grey;
+          color: $grey;
           vertical-align: middle;
         }
 
@@ -124,5 +124,9 @@ article {
       }
 
     }
+  }
+
+  #disqus_thread {
+    margin-bottom: 4rem;
   }
 }

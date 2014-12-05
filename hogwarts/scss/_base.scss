@@ -4,7 +4,7 @@
 
 html, body {
   height: 100%;
-  background: $grey;
+  background: $light-grey;
   color: $text-grey;
   font-family: "Montserrat", sans-serif;
 
@@ -38,7 +38,7 @@ header {
     text-transform: uppercase;
     font-weight: bold;
     a {
-      color: #747474;
+      color: $grey;
 
       &:hover {
         color: black;
@@ -62,8 +62,12 @@ header {
   text-transform: uppercase;
   font-weight: bold;
 
-  a:hover {
-    color: black;
+  a {
+    color: $grey;
+
+    &:hover {
+      color: black;
+    }
   }
 
   @media #{$small-only} {
@@ -92,8 +96,9 @@ header {
 
     li {
       a {
+        color: $grey;
         &:hover {
-          color: $green;
+          color: black;
         }
 
       }
