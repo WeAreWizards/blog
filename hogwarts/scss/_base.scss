@@ -134,6 +134,8 @@ footer {
 
   &>div {
     @include container;
+    max-width: none;
+    width: 80%;
   }
 
   .social {
