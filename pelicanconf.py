@@ -29,7 +29,14 @@ DEFAULT_PAGINATION = False
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['gzip_cache', 'feed_summary', 'sitemap', 'share_post']
+PLUGINS = [
+    'gzip_cache',
+    'feed_summary',
+    'sitemap',
+    'share_post',
+    'summary',
+    'liquid_tags.notebook',
+]
 
 SITEMAP = {
     'format': 'xml',
