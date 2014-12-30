@@ -125,7 +125,39 @@ article {
 
     }
   }
-}
+
+  /* ipython notebook specific styles */
+  // Disgusting hack: We are including the minimized ipython css file
+  // which was compiled from less files as scss to make sure it only
+  // applies to the ipython_notebook parts:
+  @import "_ipython_style";
+
+  .prompt {
+      display: none;
+  }
+
+  .cell.code_cell {
+//      font-size: 1rem;
+
+      .inner_cell {
+          overflow-x: auto;
+      }
+
+      pre.ipynb {
+          margin: 0px;
+          white-space: pre;
+          font-size: .9rem;
+      }
+  }
+
+  div.text_cell_render, div.rendered_html {
+      color: inherit;
+      padding: 9px 0px;
+  }
+  li {
+      line-height: inherit;
+  }
+} /* end of article */
 
 
 #disqus_thread {
