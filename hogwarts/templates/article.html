@@ -45,7 +45,7 @@
 
         <div class="article--authors">
             <span class="written-by">Written by:</span>
-            {% for name, author in AUTHORS_INFO.iteritems() %}
+            {% for name, author in AUTHORS_INFO.items() %}
                 {% if name in article.authors %}
                     <div class="author">
                         <img src="{{ author.pic }}" class="author__figure"/>

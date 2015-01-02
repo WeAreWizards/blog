@@ -125,6 +125,44 @@ article {
 
     }
   }
+
+  pre {
+    font-size: 1rem;
+  }
+
+  // ipython stuff
+  .prompt {
+      display: none;
+  }
+
+  .output_png {
+    width: 100%;
+    text-align:center;
+    padding: 1rem;
+  }
+
+  .output_text {
+    pre {
+      padding: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 1rem;
+      line-height: 110%;
+      vertical-align: top;
+      border: 1px solid #ccc;
+    }
+
+    thead th {
+      vertical-align: bottom;
+      text-align: left;
+    }
+  }
 }
 
 
