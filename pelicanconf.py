@@ -52,11 +52,20 @@ SITEMAP = {
     }
 }
 
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
+STATIC_PATHS = [
+    'images',
+    'extra/robots.txt',
+    'extra/favicon.ico',
+    'extra/rocket-lander-in-elm-extra/ship.html',
+]
+
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/rocket-lander-in-elm-extra/ship.html': {'path': 'rocket-lander-in-elm-extra/ship.html'},
 }
+
+READERS = {'html': None}
 
 AUTHORS_INFO = {
     'tom': {
