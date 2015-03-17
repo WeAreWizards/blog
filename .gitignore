@@ -9,3 +9,4 @@ bin
 include
 lib
 node_modules/
+_nb_header.html
