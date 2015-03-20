@@ -1,4 +1,4 @@
-Title: Using Haskell's QuickCheck from Python
+Title: Using Haskell's QuickCheck for Python
 Date: 2015-03-19
 Short_summary: We show how Python testing can be done via Haskell's QuickCheck.
 Category: Hacks
