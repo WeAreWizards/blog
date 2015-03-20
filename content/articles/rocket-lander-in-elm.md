@@ -91,7 +91,7 @@ programming](http://en.wikipedia.org/wiki/Functional_reactive_programming).
 Elm also comes with a standard library that contains lots of useful
 tools such as an implementation of the
 [virtual-DOM](https://github.com/Matt-Esch/virtual-dom),
-famous for for making [React](http://facebook.github.io/react/) so
+famous for making [React](http://facebook.github.io/react/) so
 speedy.
 
 Like in Haskell type annotations can be given inline, or in a line
@@ -139,7 +139,9 @@ graph in the process.
 Anything that generates DOM events can be a signal in Elm. E.g. the
 mouse moving or a key press. Elm also has a signal that generates a
 steady tick, e.g. at 30 frames-per-second, which is useful for
-programming games.
+programming games. **Edit:** As Jason Merrill points out
+[in the comments](https://blog.wearewizards.io/experience-report-rocket-lander-in-elm#comment-1863077473)
+there is `fpsWhen` which allows switchting of the `fps` updates. Thanks Jason!
 
 Every signal in Elm propagates to all code that depends on it. The
 flow is usually something like (Input -> Update application state ->
