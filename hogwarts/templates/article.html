@@ -73,7 +73,7 @@
                 var disqus_shortname = '{{ DISQUS_SITENAME }}';
                 var disqus_identifier = '/{{ article.url }}';
                 var disqus_url = '{{ SITEURL }}/{{ article.url }}';
-                var disqus_title = '{{ article.title }}';
+                var disqus_title = '{{ article.title|replace("'", "\\'") }}';
                 var disqus_developer = 1;
 
                 (function () {
