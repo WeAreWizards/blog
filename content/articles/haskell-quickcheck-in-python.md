@@ -90,3 +90,8 @@ $ runhaskell squarecheck.hs
 ```
 
 That's all there is to it!
+
+**Edit:** Someone sent me a link to
+[hypothesis](https://github.com/DRMacIver/hypothesis) which looks like
+a really solid Python version of QuickCheck. The API has been adjusted
+to fit into Python. Most importantly, it has a good shrinker!
