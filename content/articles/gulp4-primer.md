@@ -7,7 +7,7 @@ Authors: Vincent
 *Reading time: ~20 minutes.*
 
 Last year I wrote a blog post on my personal website (you can see it here [Gulp by example ](http://vincent.is/introducing-people-to-gulp/)) showing what [gulp](http://gulpjs.com/) was and making a demo project using it.
-Since then, the team behind it did a lot of work on v4 of gulp which, while not released as of the writing of the post, is stable enough to be used.  
+Since then, the team behind it did a lot of work on v4 of gulp which, while not released as of the writing of the post, is stable enough to be used.
 <!-- PELICAN_END_SUMMARY -->
 
 Rather than going through a list of new features, let's update my [angular boilerplate](https://github.com/Keats/ng-boilerplate) to use gulp4.

@@ -7,8 +7,7 @@ Authors: Vincent
 Hey everyone,  
 
 We are organising a NixOs meetup in London the 21st of April at 7pm, in space generously provided by [Mozilla London](https://goo.gl/maps/EyM1r) (it's a really cool space!).
-Tickets are limited and you can grab them on [Eventbrite](https://www.eventbrite.com/e/london-nixos-meetup-tickets-16331038576).  
-
+Tickets are limited and you can grab them on [Eventbrite](https://www.eventbrite.com/e/london-nixos-meetup-tickets-16331038576).
 <!-- PELICAN_END_SUMMARY -->
 
 There will be pizza, drinks, a talk and socializing.  
