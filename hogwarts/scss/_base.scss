@@ -136,6 +136,10 @@ footer {
     @include container;
     max-width: none;
     width: 80%;
+
+    @media #{$small-only} {
+      width: 100%;
+    }
   }
 
   .social {
@@ -153,6 +157,10 @@ footer {
 
   .intro {
     margin-bottom: 2rem;
+
+    @media #{$small-only} {
+      width: 100%;
+    }
   }
 }
 
