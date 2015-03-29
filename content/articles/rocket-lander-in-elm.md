@@ -9,6 +9,7 @@ Authors: Tom
 Writing anything substantial in JavaScript is hard because JavaScript
 lacks many of the tools programmers expect these days, like a coherent
 and strong type system.
+<!-- PELICAN_END_SUMMARY -->
 
 For that reason we are investigating various new compile-to-JavaScript
 languages. In this post we're looking at

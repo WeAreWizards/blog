@@ -6,8 +6,8 @@ Authors: Tom
 
 *Reading time: ~15 minutes.*
 
-There are many implementations for running code in a way pioneered by
-Heroku which is basically this:
+There are many implementations for running code in a way pioneered by Heroku which is basically this:
+<!-- PELICAN_END_SUMMARY -->
 
 1. Push a web service, let's call it **catmeow**, to a remote git repository.
 2. The remote side "checks out" the git repository locally (on the server).

@@ -4,10 +4,8 @@ Short_summary: We describe a simple colour-similarity search algorithm using clu
 Category: Misc
 Authors: Tom
 
-We recently talked to some customers who are interested in finding
-images with similar colours in the context of fashion. There are
-several known solutions for this, and even some hosted services that
-do it for you.
+We recently talked to some customers who are interested in finding images with similar colours in the context of fashion. There are several known solutions for this, and even some hosted services that do it for you.
+<!-- PELICAN_END_SUMMARY -->
 
 Our case is a little bit different though because the images in the
 database change frequently. That rules out a fully supervised learning
@@ -18,7 +16,5 @@ chose. Note that this is only a *very simple* prototype that delivers
 a bad to OK experience. A fully tuned system takes advantage of
 training the ranker with click-stream data, uses a more human-friendly
 colour-space etc.
-
-<!-- PELICAN_END_SUMMARY -->
 
 {% notebook color-similarity.ipynb %}

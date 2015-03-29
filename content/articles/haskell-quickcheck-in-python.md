@@ -5,8 +5,8 @@ Category: Hacks
 Authors: Tom
 
 Everyone I know who has ever used
-[QuickCheck](http://hackage.haskell.org/package/QuickCheck/) in anger
-cannot live without it.
+[QuickCheck](http://hackage.haskell.org/package/QuickCheck/) in anger cannot live without it.
+<!-- PELICAN_END_SUMMARY -->
 
 The basic idea behind QuickCheck is that we write a proposition, e.g.:
 *Reversing a list twice returns the same as the original list*. In

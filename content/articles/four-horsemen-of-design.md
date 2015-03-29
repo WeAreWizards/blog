@@ -8,6 +8,7 @@ As a fairly technical agency we do occasionally need help from our
 fantastic freelance designer to get a good looking product. You can
 read her take on design rules
 [here](http://manifesto.co.uk/design-principles-gestalt-white-space-perception/).
+<!-- PELICAN_END_SUMMARY -->
 
 But even before talking to our designer there are some rules we can
 follow to get a decent-looking and usable design. I know them as *"the
