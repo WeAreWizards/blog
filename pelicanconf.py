@@ -46,7 +46,7 @@ SITEMAP = {
         'pages': 0.5
     },
     'changefreqs': {
-        'articles': 'monthly',
+        'articles': 'daily',
         'indexes': 'daily',
         'pages': 'monthly'
     }
