@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://blog.wearewizards.io/sitemap.xml
+Sitemap: https://blog.wearewizards.io/sitemap.xml
