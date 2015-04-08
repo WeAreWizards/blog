@@ -9,6 +9,7 @@ We software developers live in a time with an
 of methodologies, libraries, tools and ideas. Evidence for or against
 specific ideas is sparse: Gathering trustworthy, controlled data in
 such complex environments is crazy expensive.
+<!-- PELICAN_END_SUMMARY -->
 
 In order to navigate the landscape We Are Wizards picked a few
 principles that we believe to be good *a priori*.
