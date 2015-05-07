@@ -1,5 +1,5 @@
 Title: gulp-sass v2 released
-Date: 2015-05-06
+Date: 2015-05-07
 Short_summary: Showing what's new in gulp-sass v2
 Category: Dev
 Authors: Vincent
