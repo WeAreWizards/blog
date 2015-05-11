@@ -1,5 +1,5 @@
 Title: Berg's Little Printer
-Date: 2015-04-30
+Date: 2015-05-11
 Category: Misc
 Authors: Tom
 Short_summary: We did some pretty exciting work for Berg!
@@ -60,25 +60,12 @@ name. A quick example:
 
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
-<span class="n">User</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;User&#39;</span><span class="p">,</span> <span class="s">&#39;name email likes_cats&#39;</span><span class="p">)</span>
+<span class="n">Character</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;Character&#39;</span><span class="p">,</span> <span class="s">&#39;name level guild&#39;</span><span class="p">)</span>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s">&#39;bob&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="s">&quot;Wizards&quot;</span><span class="p">)</span>
 
-<span class="n">alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s">&#39;Alice&#39;</span><span class="p">,</span> <span class="s">&#39;alice@example.org&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
-<span class="n">bob</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;bob@example.org&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">alice</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">alice</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
+<span class="c"># And now you can access fields with the dot notation</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> is </span><span class="si">%d</span><span class="s"> in the guild </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">me</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">me</span><span class="o">.</span><span class="n">guild</span><span class="p">))</span>
 </pre></div>
-
-Which outputs:
-
-<div class="highlight">
-<pre><code>Alice alice@example.org
-User(name='Bob', email='bob@example.org', likes_cats=False)
-</code></pre>
-</div>
-
-As you can see we can access the members defined for the
-<code>User</code> class, and namedtuple also created a useful
-<code>__repr__</code> for us.
 
 </blockquote>
 
