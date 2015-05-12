@@ -27,12 +27,8 @@
     a {
       color: scale_color($green, $lightness: -20%);
 
-      &.read-more {
-        color: blue;
-      }
-
       &:hover {
-        text-decoration: underline;
+        color: $green;
       }
     }
   }

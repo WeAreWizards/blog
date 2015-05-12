@@ -12,7 +12,6 @@ CEO Matt Berg tweeted this last year:
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">I&#39;m after a London Python freelancer for a 2mo gig, Flask/tests/Redis/Bootstrap. Mail me... matt at interconnected dot org. Tell yr friends!</p>&mdash; Matt Webb (@genmon) <a href="https://twitter.com/genmon/status/537304016993386497">November 25, 2014</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 I was hooked.
-
 <!-- PELICAN_END_SUMMARY -->
 
 We emailed Matt and it turned out that he was looking for someone to

@@ -1,5 +1,5 @@
 Title: Comparing the weather of places I've lived in
-Date: 2015-05-09
+Date: 2015-05-12
 Short_summary: Using python to compare weather data in 4 places
 Category: Dev
 Authors: Vincent
@@ -29,4 +29,4 @@ The four csvs are available on this [repo](https://github.com/Keats/cities-artic
 ## Looking at the data
 You can see the notebook below.
 
-{% notebook cities.ipynb %}
+{% notebook weather.ipynb %}
