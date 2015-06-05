@@ -102,6 +102,6 @@ var req = {
 While I see the need for Protobuf and Thrift for services communication, I don't really see the point of using it instead of JSON for the frontend. 
 First, the network tab becomes pretty much unusable and I use it very often.  
 Since Protobuf doesn't use setters, you can use wrong types in your object and it will only throw an error much later, but earlier than with vanilla JavaScript. Using [Typescript](http://www.typescriptlang.org/) or [Flow](http://flowtype.org/) with good definitions would solve many issues at compile time.  
-Another point I raised earlier is that Google recommends to mark every field as optional in Protobuf, which is better in terms of compatibility but means you can send imcomplete data.  
+Another point I raised earlier is that Google recommends to mark every field as optional in Protobuf, which is better in terms of compatibility but means you can send incomplete data.  
 Has any of you used a binary serialization for that successfully? Let us know in the comments or send us a tweet [@WeAreWizardsIO](https://twitter.com/WeAreWizardsIO).  
 
