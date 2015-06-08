@@ -15,14 +15,11 @@ I thought that it would be interesting to analyze some of that data so here it i
 ## The data
 It is coming from Google Analytics and while I could just paste screenshots, that wouldn't be any fun so I exported some of it as CSVs and used them in the notebook you can see below. The data is over the past month to have more insights on various social "strategies" (or rather, lack of) as you will see in a bit.  
 
-One important thing that the notebook doesn't talk about is the average session duration since I forgot to include it (bear with me I'm writing this from a bed on a sunday afternoon/evening).
-
-In short, the average session duration is ~20s which is pretty bad but makes sense since most people might not be interested in a given article after reading a couple of sentences and just opened it because it was at the top. Interestingly enough, people stay longer (around 1:10) on [our website](https://wearewizards.io/). 
 
 {% notebook ga-stats.ipynb %}
 
 ## The server
-Just a quick word to praise static sites: we ran 15 QPS on a micro instance at 0.0 load with 500 concurrent users.  
+Just a quick word to praise static sites: we ran 15 QPS excluding static assets (50 QPS including those) on a micro instance at 0.0 load with 500 concurrent users.  
 
 We use [Pelican](http://docs.getpelican.com/en/3.5.0/) but any of the dozens of other similar tools is fine and you can handle ridiculous amount of traffic without any worries. You can also host the blog on S3 or a CDN if you don't want to have a server at all.  
 Using a static site generator also makes it easy to review and improve articles, like you would do for code reviews. The only pain point is commenting on notebooks, as it is not possible to do so on the rendered version on Github and a notebook looks like [that](https://raw.githubusercontent.com/WeAreWizards/blog/master/content/notebooks/weather.ipynb).
