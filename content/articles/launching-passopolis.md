@@ -6,7 +6,6 @@ Authors: Vincent
 
 
 I am assuming most readers of this blog know the benefits of password manager and how everyone should use one but for the few that don't: they generate random, unique password and remember them for you, protecting you from leaks from poorly run websites such as the ones on [Plain Text Offenders](http://plaintextoffenders.com/) and just generally increasing security.
-
 <!-- PELICAN_END_SUMMARY -->
 
 
