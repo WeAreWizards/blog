@@ -5,7 +5,7 @@ Category: Dev
 Authors: Vincent
 
 
-*Reading time: ~15 minutes.*
+*Reading time: ~10 minutes.*
 
 In this article we are going to have a look at my preferred set of tools for writing React/Flux web apps.
 If you don't know React or Flux, you can finds their documentation at their respective websites: [React](http://facebook.github.io/react/), [Flux](https://facebook.github.io/flux/).
