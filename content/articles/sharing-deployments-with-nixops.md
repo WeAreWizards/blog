@@ -1,4 +1,4 @@
-Title: Sharing deployment state with nixops
+Title: How to use NixOps in a team
 Date: 2015-09-09
 Short_summary: NixOps is a great tool for running nix-based servers. We show how to do that in a team.
 Category: Dev
@@ -9,6 +9,7 @@ getting reproducible servers running in no time. NixOps can deploy to
 many different targets including VirtualBox, Google's GCE and Amazon's
 cloud services AWS.
 
+[As we have discovered](https://blog.wearewizards.io/my-experience-of-using-nixops-as-an-ansible-user)
 NixOps has the downside of storing all its state (such as the IP
 address of a server) in a binary SQLite database. That in combination
 with some defaults such as absolute paths make it a bit cumbersome to
@@ -107,9 +108,10 @@ server...> waiting for SSH......
 
 Keeping AWS keys or any secrets in git unencrypted is a recipe for
 disaster. Bitcoin miners constantly scan Github for accidental AWS key
-uploads and will have spent thousands of your pounds before you can
+uploads and will have spent thousands of your $CURRENCY before you can
 blink. The NixOps state file itself contains SSH root keys, exposing
-those keys is the same as having the machine owned with a zero day exploit.
+those keys is the same as having the machine owned with a zero day
+exploit.
 
 **Keeping either the statefile or the `.envrc` with your AWS keys
 in git unencrypted is grossly negligent.** I know this is common
@@ -133,8 +135,8 @@ not encrypted: network.nix
 
 Now we set up the `.gitattributes` file:
 
-```shell
-# .gitattributes
+```console
+$ cat .gitattributes
 localstate.nixops filter=git-crypt
 .envrc filter=git-crypt diff=git-crypt
 ```
@@ -162,16 +164,17 @@ which needs to stay top-level).
 
 For example:
 
-```shell
-# .gitattributes
+```console
+$ cat .gitattributes
 secrets/* filter=git-crypt
 .envrc filter=git-crypt diff=git-crypt
 ```
 
-### Pinning a specific nixos release
+### Pinning a specific NixOS release
 
 As of Nix 1.9 one can refer to a specific release using HTTP, so we
-tend to pin our relase like so in the `.envrc` file:
+tend to pin our relase like so in the `.envrc` file to make sure that
+everyone with the repository references the same set of nix packages:
 
 ```shell
 # .envrc
@@ -193,6 +196,5 @@ think I'd prefer a text format based on e.g. protocol buffers or JSON.
 
 # This works well
 
-The setup looks a bit complicated but works very well in
-practice. This setup also solves a few other issues that always come
-up, e.g. how to distribute secrets in a small team.
+This bag of tricks might look a bit complicated but works very well
+for us in practice.
