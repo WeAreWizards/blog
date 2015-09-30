@@ -7,16 +7,16 @@ Authors: Vincent
 *Reading time: ~15 minutes.*
 
 
-Developing web apps in a dynamic language  is a breeze when using frameworks like [Django](https//www.djangoproject.com/) for Python.
+Developing web apps in dynamic languages is a breeze when using frameworks like [Django](https//www.djangoproject.com/) for Python.
 The downsides are that software written in dynamic languages is harder, at least in my opinion, to maintain, to refactor and you also need to write tests to cover potential errors that would simply not be possible with a compiler.
 <!-- PELICAN_END_SUMMARY -->
 
 
-While I would use Flask or Django for a small project, I would definitely prefer having help from a compiler for a long-lived product. The fact that compiled languages are much faster than dynamic ones is a nice bonus too.
+While I would use Flask or Django for a small project, I would definitely prefer having help from a compiler for a long-lived product. The fact that compiled languages are generally faster than dynamic ones is a nice bonus too.
 
 The two choices in my mind right now for a compiled language are Go and Rust. Some (ie Tom) would say Haskell, others would say Scala but in the end it's down to preferences.
 
-I previously used Go for a few projects and I quite liked it despite some annoying quirks such as package management (might be solved by [gb](https://getgb.io/) now) and seeing `interface {}` in some libraries to get around the weak type system. On the other hand, I have been following [Rust](https://www.rust-lang.org/) developement for quite a while but didn't play with it more than a couple of toys. I was keen to see if it could work as the backend for a web app, which in short means a HTTP server receiving and sending JSON while talking to a Postgres database. There are obviously an awful lot of other things but let's keep it simple for now.
+I previously used Go for a few projects and I quite liked it despite some annoying quirks such as package management (might be solved by [gb](https://getgb.io/) now) and seeing `interface {}` in some libraries to get around the weak type system. On the other hand, I have been following [Rust](https://www.rust-lang.org/) developement for quite a while but didn't play with it more than a couple of toy programs. I was keen to see if it could work as the backend for a web app, which in short means a HTTP server receiving and sending JSON while talking to a Postgres database. There are obviously an awful lot of other things but let's keep it simple for now.
 
 
 ## The demo
@@ -27,8 +27,10 @@ For the HTTP framework, I have used [Iron](http://ironframework.io/) which was s
 
 For the postgres side, there is a crate (the term for a package in Rust) called [postgres](https://github.com/sfackler/rust-postgres). I'm also using a pool manager called [r2d2](https://github.com/sfackler/r2d2) because I didn't know about [Arc](https://doc.rust-lang.org/std/sync/struct.Arc.html) and couldn't pass the connection itself as it wasn't thread safe.
 
+The Makefile for Postgres was taken from another Iron + Postgres project I have found on Github: [rustwebapp](https://github.com/superlogical/rustwebapp).
 
-Keep in mind I'm a newbie in Rust so there is probably lots of things I'm doing wrong in there, feel free to point them out!
+
+Keep in mind I'm a newbie in Rust so there are probably lots of things I'm doing wrong in there, feel free to point them out!
 > **Note:** the server is currently quite slow, only handling around 6.5k req/s for the GET handler, removing the database part makes it shoot up to 70k req/s so something must be going wrong somewhere around postgres
 
 
@@ -63,7 +65,7 @@ match dal::list_passwords(conn) {
 ```
 > **Note:** Rust automatically returns the last value, in that case the Ok() ones. Iron handler return type is a Result so I should probably return an Err but it currently works well enough™
 
-Removing the Err branch errors with the following message `error: non-exhaustive patterns: Err(_) not covered [E0004]`.
+As mentioned earlier, Rust forces us to handle the result properly: removing the Err branch errors with the following message `error: non-exhaustive patterns: Err(_) not covered [E0004]`.
 
 Pattern matching is obviously not limited to Result and Option and can be used anywhere you would want a if/else or a switch.
 
@@ -107,7 +109,7 @@ You can even have macros checking [SQL syntax](https://github.com/sfackler/rust-
 ## What I didn't like
 I think it can be summed up in one word: documentation.
 
-Most of the crates I have looked at (except the postgres one) have next to no real documentation , only a maze of links to click in the generated rustdoc that pulls the in-code documentation into a nice looking website. This is useful if I want to know more details about a type or a trait but doesn't help me understanding how am I supposed to use it. Having to go through the tests or the code directly to see what I am supposed to do for every crate instead of having a "How to use" documentation is annoying. 
+Most of the crates I have looked at (except the postgres one) have next to no real documentation, only a maze of links to click in the generated rustdoc that pulls the in-code documentation into a nice looking website. This is useful if I want to know more details about a type or a trait but doesn't help me understanding how am I supposed to use it. Having to go through the tests or the code directly to see what I am supposed to do for every crate instead of having a "How to use" documentation is annoying. 
 
 The provided documentation can also be outdated as it is currently not integrated with Cargo. There is an [open issue](https://github.com/rust-lang/crates.io/issues/91) for that though.
 
