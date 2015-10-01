@@ -16,7 +16,7 @@ While I would use Flask or Django for a small project, I would definitely prefer
 
 The two choices in my mind right now for a compiled language are Go and Rust. Some (ie Tom) would say Haskell, others would say Scala but in the end it's down to preferences.
 
-I previously used Go for a few projects and I quite liked it despite some annoying quirks such as package management (might be solved by [gb](https://getgb.io/) now) and seeing `interface {}` in some libraries to get around the weak type system. On the other hand, I have been following [Rust](https://www.rust-lang.org/) developement for quite a while but didn't play with it more than a couple of toy programs. I was keen to see if it could work as the backend for a web app, which in short means a HTTP server receiving and sending JSON while talking to a Postgres database. There are obviously an awful lot of other things but let's keep it simple for now.
+I previously used Go for a few projects and I quite liked it despite some annoying quirks such as package management (might be solved by [gb](https://getgb.io/) now) and seeing `interface {}` in some libraries to get around the weak type system. On the other hand, I have been following [Rust](https://www.rust-lang.org/) development for quite a while but didn't play with it more than a couple of toy programs. I was keen to see if it could work as the backend for a web app, which in short means a HTTP server receiving and sending JSON while talking to a Postgres database. There are obviously an awful lot of other things but let's keep it simple for now.
 
 
 ## The demo
