@@ -7,7 +7,7 @@ Authors: Vincent
 *Reading time: ~15 minutes.*
 
 
-Developing web apps in dynamic languages is a breeze when using frameworks like [Django](https//www.djangoproject.com/) for Python.
+Developing web apps in dynamic languages is a breeze when using frameworks like [Django](https://www.djangoproject.com/) for Python.
 The downsides are that software written in dynamic languages is harder, at least in my opinion, to maintain, to refactor and you also need to write tests to cover potential errors that would simply not be possible with a compiler.
 <!-- PELICAN_END_SUMMARY -->
 
