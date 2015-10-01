@@ -1,5 +1,5 @@
 Title: Trying Rust for web services
-Date: 2015-09-30
+Date: 2015-10-01
 Short_summary: I made a very basic Rust backend, here's what I think about it
 Category: Dev
 Authors: Vincent
