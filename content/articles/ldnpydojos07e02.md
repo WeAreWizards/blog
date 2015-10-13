@@ -9,7 +9,6 @@ We (Wizards) attended the London Python Code Dojo at Bank of America in Canary
 Wharf on the first of October.
 
 Find our report inside.
-I'll report on the event in this post.
 <!-- PELICAN_END_SUMMARY -->
 
 <img width="100%" src="../images/dojocrowd.jpg">
