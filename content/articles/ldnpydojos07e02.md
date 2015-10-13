@@ -1,5 +1,5 @@
 Title: The London Python Dojo S07E02
-Date: 2015-10-03
+Date: 2015-10-13
 Short_summary: The We Are Wizards team was at the last London Python Code Dojo.
 Category: Events
 Authors: Gautier
