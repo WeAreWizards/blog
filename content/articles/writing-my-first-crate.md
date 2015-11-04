@@ -25,7 +25,7 @@ eyJhbGciOiJIUzI1Ni.eyJzdWIiOiIxMjM0NTY3ODkwIn0.Rq8IxqeX7eA6GgYxlcHdP
 ```
 
 From the code above, you can see that a JWT has 3 parts, separated by a `.`.
-All of those parts are base64 encoded, which means is trivial to decode (remember the non-sensitive data point above?).
+All of those parts are base64 encoded, which means it is trivial to decode (remember the non-sensitive data point above?).
 
 
 The first is the header, that typically contains the following:
