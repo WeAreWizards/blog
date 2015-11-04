@@ -33,7 +33,6 @@ PLUGINS = [
     'gzip_cache',
     'feed_summary',
     'sitemap',
-    'share_post',
     'summary',
     'liquid_tags.notebook',
 ]
