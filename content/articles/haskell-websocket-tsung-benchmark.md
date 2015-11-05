@@ -19,12 +19,13 @@ setup.
 
 ## Test servers
 
-Unlike the Phoenix people didn't have Rackspace sponsorship so we had
+Unlike the Phoenix people we don't have Rackspace sponsorship so we had
 to resort to the common man's cheap machines: EC2 spot instances. We
 bid $0.10 on two `m4.xlarge` machines with 16G of RAM and 4 cores
 which usually cost around $0.05 per hour in eu-west.
 
-We're using Nix to deploy tsung and a very simple Haskell chat program
+[As usual](https://blog.wearewizards.io/how-to-use-nixops-in-a-team)
+we're using Nix to deploy tsung and a very simple Haskell chat program
 that just broadcasts incoming messages to everyone.
 
 > **tsung** is a tcp/web load generator written in Erlang configured
@@ -39,7 +40,8 @@ handleWS bcast pending = do
     localChan <- dupChan bcast
     connection <- acceptRequest pending
 
-    -- Yes, we're leaking resources here :)
+    -- Yes, we're leaking resources here because this forkIO
+    -- doesn't terminate when the socket closes :)
     forkIO $ forever $ do
         message <- readChan localChan
         sendTextData connection message
@@ -96,7 +98,9 @@ ip addr add 172.31.18.83/20 dev eth0
 
 We have a
 [slightly different](https://github.com/WeAreWizards/haskell-websockets-tsung-benchmark/blob/master/code/src/tsung-conf.xml)
-tsung config from the Phoenix people which we copy to our tsung box:
+tsung config from the Phoenix people which we copy to our tsung
+box. The differences are using the recently added tsung `websockets`
+connection type, and to terminate on messages instead of a delay.
 
 ```console
 $ nixops scp --to tsung-1 code/src/tsung-conf.xml tsung-conf.xml
@@ -148,12 +152,12 @@ That log also shows that we triggered the kernel's DOS protection
 against SYN flooding. We fixed that by increasing
 `net.ipv4.tcp_max_syn_backlog` and `net.core.somaxconn`.
 
-Now when running tsung we got up to about 100k connections on the
+Now when running tsung we got up to about 120k connections on the
 Haskell websocket box:
 
 ```
-[root@websock-server:~]# netstat -ntp  | grep -v TIME_WAIT | wc
- 119748  838238 12094489
+[root@websock-server:~]# netstat -ntp  | grep -v TIME_WAIT | wc -l
+ 119748
 ```
 
 ## Problem 2: The Erlang process limit
@@ -177,7 +181,8 @@ tsung -p 1250000 -f tsung-conf.xml start
 
 But no luck - the same problem occurs. Turns out that the `-p` switch
 doesn't actually work (we filed
-[a bug](https://github.com/processone/tsung/issues/136)).
+[a bug](https://github.com/processone/tsung/issues/136) which was
+fixed within hours. Thanks!).
 
 We [patched](https://github.com/WeAreWizards/haskell-websockets-tsung-benchmark/blob/master/nix/maxproc.patch) tsung ourselves for now.
 
