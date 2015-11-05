@@ -30,7 +30,7 @@ that just broadcasts incoming messages to everyone.
 
 > **tsung** is a tcp/web load generator written in Erlang configured
 > through a XML domain-specific language
-> ([website](tsung.erlang-projects.org)).
+> ([website](http://tsung.erlang-projects.org)).
 
 The core handler of our chat program looks like this (full source [here](https://github.com/WeAreWizards/haskell-websockets-tsung-benchmark/blob/master/code/src/Main.hs)):
 
