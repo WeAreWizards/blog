@@ -143,8 +143,10 @@ function reduce(state: any = {}, action: Action) {
 }
 ```
 
-## The state of Flow Flow type inference is really good and the opt-in
-aspect makes it really easy to add it to a codebase.
+## The state of Flow
+
+Flow type inference is really good and the opt-in aspect makes it
+really easy to add it to a codebase.
 
 However, there are several points that makes it hard to use:
 
