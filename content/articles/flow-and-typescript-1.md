@@ -24,7 +24,19 @@ It's important to say that Flow doesn't currently work on Windows. You can have 
 
 For the sake of simplicity I will install the Flow binary with [flow-bin](https://www.npmjs.com/package/flow-bin).instead of using e.g. a gulp plugin (mainly since I couldn't find one).
 
-One nice feature in Flow is that the type checking is opt-in: only the files with the `/* @flow */` comment at the top of a file will be checked. This makes transitioning to Flow extremely easy: you can go one file at a time. Flow also has a `suggest` feature that finds a number of type annotations automatically.
+One nice feature in Flow is that the type checking is opt-in: only the files with the `/* @flow */` comment at the top of a file will be checked. This makes transitioning to Flow extremely easy: you can go one file at a time. Flow also has a `suggest` feature that finds a number of type annotations automatically. `suggest` prints a diff of the type annotations:
+
+```diff
+$ flow suggest src/app/store.js
+--- old
++++ new
+@@ -16,7 +16,7 @@
+   router: routerStateReducer,
+   ...reducers,
+ });
+-const middlewares = [thunk];
++const middlewares: Array<{thunk: () => any,}> = [thunk];
+```
 
 ## An example
 
@@ -37,7 +49,7 @@ Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob
 ```
 As you can see, Flow doesn't complain about the React import as it comes bundled with an interface file for it.
 
-An interface file is how Flow knows what to expect from an external import, such as react-router for which flow doesn't ship type declarations.
+An interface file is how Flow knows what to expect from an external import, such as react-router.
 
 To fix our error, we need to add an interface file for react-router. The interface file will be empty for now and we tell flow to use the `typings` directory for libraries:
 
@@ -96,7 +108,7 @@ src/app/components/DashboardRoute.js:9
                                   ^^^^^^^^^^^^^^^^^^^ exports of "../reducers/lists"
 ```
 
-This is preferable over the default ES6 behaviour of assigning `undefined` to variables that aren't found in the imported library.
+This is preferable over the default Javascript behaviour of assigning `undefined` to variables that aren't found in the imported library.
 
 ### Union types
 
@@ -156,15 +168,15 @@ However, there are several points that makes it less nice to use:
 
 - Flow seems to have little traction and a tiny community
     - The evidence is lots of reasonably obvious bugs without activity for months.
-    - Some fairly obvious features are missing, e.g. integer keys as in `{1: 2}` are not supported despite showing up in tests a lot.
+    - Some fairly obvious features are missing, e.g. integer keys as in `{1: 2}` are not supported despite showing up in tests a lot ([open issue](https://github.com/facebook/flow/issues/380)).
 - No equivalent to [DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped) for Flow which means you would have to write the interface file of every third party library you are using if you want types all the way.
 - Non-existent support in tools such as Webpack.
 - Low priority project for Facebook from an outsider point of view: ImmutableJS (another Facebook project) for example does not have an official Flow interface file.
 - The documentation is somewhat incomplete
-- Flow runs a server in the background which needs to be restarted manually, e.g. when adding a new interface file. Forgetting this will lead to some head-scratching error messges.
-- Flow is not super compatible with babel and es6-lint. E.g. `function returns_func(): function` works in Flow but not in babel.
+- Flow runs a server in the background which needs to be restarted manually, e.g. when adding a new interface file. Forgetting this will lead to some head-scratching error messages.
+- Flow is not super compatible with Babel and es6-lint. E.g. `function returns_func(): function` works in Flow but not in Babel because `function` is not a valid annotation in Babel (syntax error).
 
-Now that Flow supports ES6, the it's mostly lacking in tooling and documentation.
+Now that Flow supports ES6, it's mostly lacking in tooling and documentation.
 
 Writing interface files myself is OK (well maybe not all of [Lodash](https://lodash.com/docs) in one go) but it would be nice to have a good reference on how to write proper interface files, and to have Facebook provide interface files for their own projects.
 The only official files we found are part of flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js).
