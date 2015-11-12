@@ -58,7 +58,7 @@ In the `routes.js` file we are importing `Route` from `react-router` but our int
 ```js
 declare module "react-router" {
   declare var Route: any;
-} 
+}
 // or
 type RouteProps = {
   component: ReactClass<any, any, any>
@@ -89,28 +89,62 @@ src/app/components/DashboardRoute.js:9
 ```
 
 ### Union types
-Flow doesn't currently have enums but allows to create some kind of equivalent:
 
-```
- 41:   let y: "xxx" | "xy" = "bar";
-                             ^^^^^ string. This type is incompatible with
- 41:   let y: "xxx" | "xy" = "bar";
-              ^^^^^^^^^^^^ union type
-```
-In the example above, the type `"xxx" | "xy"` will only accept `"xxx"` and `"xy"`.
-Now does this remind you of something in the flux paradigm? Actions!
+Flow doesn't currently have enums (sum types) but allows some
+approximation with
+[disjoint union types](http://flowtype.org/blog/2015/07/03/Disjoint-Unions.html):
 
 ```js
-// reducers/lists.js
-type Action = {type: "CARD_CREATE", payload: {id: number, listId: number}} |
-  {type: "LIST_CREATE", payload: {id: number, name: string}};
+type TodoAction = Add | Remove
+type Add = { type: 'Add', entry: string }
+type Remove = { type: 'Remove', id: number }
 ```
 
-TODO: try to make it work
+With this setup flow will complain if 1) the type doesn't match any of
+the defined types or 2) the structure doesn't match. E.g.
 
+```js
+let add: TodoAction = {type: 'Ad', entry: 'get milk'}
+```
 
-## The state of Flow
-Flow type inference is really good and the opt-in aspect makes it really easy to add it to a codebase.
+fails with:
+
+```
+ 17: let add: TodoAction = {type: 'Ad', entry: 'get milk'}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ object literal. This type is incompatible with
+ 17: let add: TodoAction = {type: 'Ad', entry: 'get milk'}
+              ^^^^^^^^^^ union type
+```
+
+and
+
+```js
+let add: TodoAction = {type: 'Add'}
+```
+
+will fail with a similar error because the `entry` field is missing:
+
+```
+ 20: let add: TodoAction = {type: 'Add'}
+                           ^^^^^^^^^^^^^ object literal. This type is incompatible with
+ 20: let add: TodoAction = {type: 'Add'}
+              ^^^^^^^^^^ union type
+```
+
+Unfortunately this is no true sum type. E.g. the following example
+will work just fine even though `"omgbug"` is not valid for the `type`
+field:
+
+```js
+function reduce(state: any = {}, action: Action) {
+  switch (action.type) {
+  case "omgbug": return "bug";
+  }
+}
+```
+
+## The state of Flow Flow type inference is really good and the opt-in
+aspect makes it really easy to add it to a codebase.
 
 However, there are several points that makes it hard to use:
 
@@ -120,6 +154,5 @@ However, there are several points that makes it hard to use:
 - Low priority project for Facebook from an outsider point of view: ImmutableJS (another Facebook project) for example does not have an official Flow interface file.
 - Incomplete documentation that is rarely updated
 
-Now that Flow supports ES6, my main point is tooling and documentation.  
+Now that Flow supports ES6, my main point is tooling and documentation.
 Writing interface files myself is ok (well maybe not all of Lodash in one go) but it would be nice to have a good documentation on how to write proper interface files and have Facebook provide them for their own project. The only official files I have found are in flow source itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) for example.
-
