@@ -14,17 +14,20 @@ A simple way to make a codebase easier to maintain and to grow is to have types 
 <!-- PELICAN_END_SUMMARY -->
 TypeScript is a ES6 transpiler like [Babel](https://babeljs.io/) with types while Flow only does the annotation and static type checking. If you want to use ES6 with Flow, you will need to use Babel as well.
 
-For this serie of articles, I am going to convert my [react-example](https://github.com/Keats/react-example) which is a very basic react/redux/react-router kanban board app to both Flow and TypeScript.
+For this series of articles, I am going to convert my [react-example](https://github.com/Keats/react-example) which is a very basic react/redux/react-router Kanban board app to both Flow and TypeScript.
 
 In this part 1, we will look at Flow.
 
 ## Installation and usage
-It's important to say that Flow doesn't currently work on Windows, you can have a look at [issue #6](https://github.com/facebook/flow/issues/6) on their tracker if you are interested. Running it in a [docker image](https://hub.docker.com/r/motiz88/flow/) might work for you though or installing it using [Nix](http://nixos.org/nix/).
-For the sake of simplicity, I will only install the Flow binary with [flow-bin](https://www.npmjs.com/package/flow-bin) instead of using a gulp plugin for example (mainly since I couldn't find one).
 
-The nice thing about Flow is that the type checking is opt-in, only the files having the `/* @flow */` comment at the top of a file will be checked. This makes transitioning to Flow extremely easy: you can go one file at a time.
+It's important to say that Flow doesn't currently work on Windows. You can have a look at [issue #6](https://github.com/facebook/flow/issues/6) on their tracker if you are using Windows. Running it in a [docker image](https://hub.docker.com/r/motiz88/flow/) might work for you though.
+
+For the sake of simplicity I will install the Flow binary with [flow-bin](https://www.npmjs.com/package/flow-bin).instead of using e.g. a gulp plugin (mainly since I couldn't find one).
+
+One nice feature in Flow is that the type checking is opt-in: only the files with the `/* @flow */` comment at the top of a file will be checked. This makes transitioning to Flow extremely easy: you can go one file at a time. Flow also has a `suggest` feature that finds a number of type annotations automatically.
 
 ## An example
+
 Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob/master/flow/src/app/routes.js) files and we get the following error:
 
 ```
@@ -32,11 +35,11 @@ Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob
                                        ^^^^^^^^^^^^^^ react-router. Required module not found
 
 ```
-As you can see, Flow doesn't complain the React import as it comes bundled with an interface file for it.
+As you can see, Flow doesn't complain about the React import as it comes bundled with an interface file for it.
 
-An interface file is how Flow knows what to expect from an external import, such as react-router, which probably won't have typings.
+An interface file is how Flow knows what to expect from an external import, such as react-router for which flow doesn't ship type declarations.
 
-To fix our error, we need to add an interface file for react-router, which will be empty for now and tell flow to use the typings directory for libraries:
+To fix our error, we need to add an interface file for react-router. The interface file will be empty for now and we tell flow to use the `typings` directory for libraries:
 
 ```js
 // typings/react-router.js
@@ -53,7 +56,7 @@ Running Flow again gives us another error:
                                        ^^^^^^^^^^^^^^ exports of "react-router"
 ```
 
-In the `routes.js` file we are importing `Route` from `react-router` but our interface file is completely empty.  We have 2 possibilities here, either we define `Route` to be `any` (if we are prototyping) or we type it properly.
+In the `routes.js` file we are importing `Route` from `react-router` but our interface file is completely empty.  We have two possibilities here, either we define `Route` to be `any` (if we are prototyping) or we annotate it properly.
 
 ```js
 declare module "react-router" {
@@ -74,12 +77,17 @@ declare module "react-router" {
   declare var Link: ReactClass<void, LinkProps, void>;
 }
 ```
+
 Do remember that I just started using Flow so those declarations might be incorrect.
 
-Adding flow to the rest of the files is easy as well, with the occasional 3rd party library interface to write but here are a few select useful features.
+Adding flow to the rest of the files is easy as well, with the occasional 3rd party library interface to write.
+
+Flow has a number of useful features:
 
 ### Import checking
+
 Importing an unknown property will result in a error, as shown in the following error:
+
 ```
 src/app/components/DashboardRoute.js:9
   9: import { getAllLists2 } from "../reducers/lists";
@@ -88,11 +96,11 @@ src/app/components/DashboardRoute.js:9
                                   ^^^^^^^^^^^^^^^^^^^ exports of "../reducers/lists"
 ```
 
+This is preferable over the default ES6 behaviour of assigning `undefined` to variables that aren't found in the imported library.
+
 ### Union types
 
-Flow doesn't currently have enums (sum types) but allows some
-approximation with
-[disjoint union types](http://flowtype.org/blog/2015/07/03/Disjoint-Unions.html):
+Flow doesn't currently have enums (sum types) but allows some approximation with [disjoint union types](http://flowtype.org/blog/2015/07/03/Disjoint-Unions.html):
 
 ```js
 type TodoAction = Add | Remove
@@ -100,8 +108,7 @@ type Add = { type: 'Add', entry: string }
 type Remove = { type: 'Remove', id: number }
 ```
 
-With this setup flow will complain if 1) the type doesn't match any of
-the defined types or 2) the structure doesn't match. E.g.
+With this setup flow will complain if 1) the type doesn't match any of the defined types or 2) the structure doesn't match. E.g.
 
 ```js
 let add: TodoAction = {type: 'Ad', entry: 'get milk'}
@@ -131,9 +138,7 @@ will fail with a similar error because the `entry` field is missing:
               ^^^^^^^^^^ union type
 ```
 
-Unfortunately this is no true sum type. E.g. the following example
-will work just fine even though `"omgbug"` is not valid for the `type`
-field:
+Unfortunately this is no true sum type. E.g. the following example will work just fine even though `"omgbug"` is not valid for the `type` field:
 
 ```js
 function reduce(state: any = {}, action: Action) {
@@ -145,16 +150,21 @@ function reduce(state: any = {}, action: Action) {
 
 ## The state of Flow
 
-Flow type inference is really good and the opt-in aspect makes it
-really easy to add it to a codebase.
+Flow type inference is really good and the opt-in aspect makes it really easy to add it to a codebase.
 
-However, there are several points that makes it hard to use:
+However, there are several points that makes it less nice to use:
 
 - Flow seems to have little traction and a tiny community
+    - The evidence is lots of reasonably obvious bugs without activity for months.
+    - Some fairly obvious features are missing, e.g. integer keys as in `{1: 2}` are not supported despite showing up in tests a lot.
 - No equivalent to [DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped) for Flow which means you would have to write the interface file of every third party library you are using if you want types all the way.
-- Inexistent tooling in tools such as Webpack
+- Non-existent support in tools such as Webpack.
 - Low priority project for Facebook from an outsider point of view: ImmutableJS (another Facebook project) for example does not have an official Flow interface file.
-- Incomplete documentation that is rarely updated
+- The documentation is somewhat incomplete
+- Flow runs a server in the background which needs to be restarted manually, e.g. when adding a new interface file. Forgetting this will lead to some head-scratching error messges.
+- Flow is not super compatible with babel and es6-lint. E.g. `function returns_func(): function` works in Flow but not in babel.
 
-Now that Flow supports ES6, my main point is tooling and documentation.
-Writing interface files myself is ok (well maybe not all of Lodash in one go) but it would be nice to have a good documentation on how to write proper interface files and have Facebook provide them for their own project. The only official files I have found are in flow source itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) for example.
+Now that Flow supports ES6, the it's mostly lacking in tooling and documentation.
+
+Writing interface files myself is OK (well maybe not all of [Lodash](https://lodash.com/docs) in one go) but it would be nice to have a good reference on how to write proper interface files, and to have Facebook provide interface files for their own projects.
+The only official files we found are part of flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js).
