@@ -15,7 +15,7 @@ A simple way to make a codebase easier to maintain and to grow is to have types 
 
 TypeScript is a ES6 transpiler like [Babel](https://babeljs.io/) with types while Flow only does the annotation and static type checking. If you want to use ES6 with Flow, you will need to use Babel as well.
 
-For this series of articles, I am going to convert my [react-example](https://github.com/Keats/react-example) which is a very basic react/redux/react-router Kanban board app to both Flow and TypeScript. Both TypeScript and Flow versions are in the same [repo](https://github.com/Keats/flow-typescript) but only the Flow one is updated at the time of writing.
+For this series of articles, I am going to convert my [react-example](https://github.com/Keats/react-example) which is a very basic react/redux/react-router Kanban board app to both Flow and TypeScript. Both TypeScript and Flow versions are in the same [repo](https://github.com/Keats/flow-typescript) but only the Flow one is working at the time of writing.
 
 In this part 1, we will look at Flow.
 
@@ -156,7 +156,7 @@ Unfortunately this is no true sum type. E.g. the following example will work jus
 ```js
 function reduce(state: any = {}, action: Action) {
   switch (action.type) {
-    case "omgbug": 
+    case "omgbug":
       return "bug";
   }
 }
@@ -184,8 +184,7 @@ Writing interface files myself is OK (well maybe not all of [Lodash](https://lod
 The only official files we found are part of flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) and hasn't been updated yet to 0.14.
 
 
-While this conclusion sounds overly critical, we really like the idea behind Flow and hope that its community get larger. We are also on the fence of adding it in the product we are working on.
+While this conclusion sounds overly critical, we really like the idea behind Flow and hope that its community gets larger. We are on the fence for using Flow in the product we are working on.
 
 
 We are going to work on the TypeScript article soon and the article should be available in a couple of weeks. In the meantime, if you are using Flow (or used it and gave up), we want your opinions!
-
