@@ -15,7 +15,7 @@ A simple way to make a codebase easier to maintain and to grow is to have types 
 
 TypeScript is a ES6 transpiler like [Babel](https://babeljs.io/) with types while Flow only does the annotation and static type checking. If you want to use ES6 with Flow, you will need to use Babel as well.
 
-For this series of articles, I am going to convert my [react-example](https://github.com/Keats/react-example) which is a very basic react/redux/react-router Kanban board app to both Flow and TypeScript. Both TypeScript and Flow versions are in the same [repo](https://github.com/Keats/flow-typescript) but only the Flow one is working at the time of writing.
+For this series of articles, I am going to convert my [react-example](https://github.com/Keats/react-example) which is a very basic React/Redux/react-router Kanban board app to both Flow and TypeScript. Both TypeScript and Flow versions are in the same [repo](https://github.com/Keats/flow-typescript) but only the Flow one is working at the time of writing.
 
 In this part 1, we will look at Flow.
 
@@ -23,7 +23,7 @@ In this part 1, we will look at Flow.
 
 It's important to say that Flow doesn't currently work on Windows. You can have a look at [issue #6](https://github.com/facebook/flow/issues/6) on their tracker if you are using Windows. Running it in a [docker image](https://hub.docker.com/r/motiz88/flow/) might work for you though.
 
-For the sake of simplicity I will install the Flow binary with [flow-bin](https://www.npmjs.com/package/flow-bin).instead of using e.g. a gulp plugin (mainly since I couldn't find one).
+For the sake of simplicity I will install the Flow binary with [flow-bin](https://www.npmjs.com/package/flow-bin) instead of using e.g. a gulp plugin (mainly since I couldn't find one).
 
 One nice feature in Flow is that the type checking is opt-in: only the files with the `/* @flow */` comment at the top of a file will be checked. This makes transitioning to Flow extremely easy: you can go one file at a time. Flow also has a `suggest` feature that finds a number of type annotations automatically. `suggest` prints a diff of the type annotations:
 
@@ -48,11 +48,12 @@ Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob
                                        ^^^^^^^^^^^^^^ react-router. Required module not found
 
 ```
-As you can see, Flow doesn't complain about the React import as it comes bundled with an interface file for it.
+
+As you can see, Flow doesn't complain about the `React` import at the top of [`routes.js`](https://github.com/Keats/flow-typescript/blob/master/flow/src/app/routes.js) as it comes bundled with an interface file for it.
 
 An interface file is how Flow knows what to expect from an external import, such as react-router.
 
-To fix our error, we need to add an interface file for react-router. The interface file will be empty for now and we tell flow to use the `typings` directory for libraries:
+To fix our error, we need to add an interface file for react-router. The interface file will be empty for now and we tell Flow to use the `typings` directory for libraries:
 
 ```js
 // typings/react-router.js
@@ -121,7 +122,7 @@ type Add = { type: 'Add', entry: string }
 type Remove = { type: 'Remove', id: number }
 ```
 
-With this setup flow will complain if 1) the type doesn't match any of the defined types or 2) the structure doesn't match. E.g.
+With this setup Flow will complain if 1) the type doesn't match any of the defined types or 2) the structure doesn't match. E.g.
 
 ```js
 let add: TodoAction = {type: 'Ad', entry: 'get milk'}
@@ -164,7 +165,7 @@ function reduce(state: any = {}, action: Action) {
 
 ## The state of Flow
 
-Flow type inference is really good and the opt-in aspect makes it really easy to add it to a codebase.
+Flow type inference is great and the opt-in aspect makes it easy to add it to a codebase.
 
 However, there are several points that makes it less nice to use:
 
@@ -180,8 +181,8 @@ However, there are several points that makes it less nice to use:
 
 Now that Flow supports ES6, it's mostly lacking in tooling and documentation.
 
-Writing interface files myself is OK (well maybe not all of [Lodash](https://lodash.com/docs) in one go) but it would be nice to have a good reference on how to write proper interface files, and to have Facebook provide interface files for their own projects.
-The only official files we found are part of flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) and hasn't been updated yet to 0.14.
+Writing interface files is OK (well maybe not all of [Lodash](https://lodash.com/docs) in one go) but it would be nice to have a good reference on how to write proper interface files, and to have Facebook provide interface files for their own projects.
+The only official files we found are part of Flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) and hasn't been updated yet to 0.14.
 
 
 While this conclusion sounds overly critical, we really like the idea behind Flow and hope that its community gets larger. We are on the fence for using Flow in the product we are working on.
