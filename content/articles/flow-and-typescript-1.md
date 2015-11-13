@@ -41,7 +41,7 @@ $ flow suggest src/app/store.js
 
 ## An example
 
-Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob/master/flow/src/app/routes.js) files and we get the following error:
+Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob/master/flow/src/app/routes.js) file where we get the following error:
 
 ```
   5: import { Route, IndexRoute } from "react-router";
@@ -49,11 +49,11 @@ Let's start with the [`routes.js`](https://github.com/Keats/flow-typescript/blob
 
 ```
 
-As you can see, Flow doesn't complain about the `React` import at the top of [`routes.js`](https://github.com/Keats/flow-typescript/blob/master/flow/src/app/routes.js) as it comes bundled with an interface file for it.
+As you can see, Flow doesn't complain about the `React` import at the top of [`routes.js`](https://github.com/Keats/flow-typescript/blob/master/flow/src/app/routes.js) because it comes bundled with an interface file for it. But it does complain about react-router.
 
 An interface file is how Flow knows what to expect from an external import, such as react-router.
 
-To fix our error, we need to add an interface file for react-router. The interface file will be empty for now and we tell Flow to use the `typings` directory for libraries:
+To fix our error, we add an interface file for react-router. The interface file will be empty for now and we tell Flow to use the `typings` directory for libraries:
 
 ```js
 // typings/react-router.js
@@ -167,7 +167,7 @@ function reduce(state: any = {}, action: Action) {
 
 Flow type inference is great and the opt-in aspect makes it easy to add it to a codebase.
 
-However, there are several points that makes it less nice to use:
+However, there are several issues that makes it less nice to use:
 
 - Flow seems to have little traction and a tiny community
     - The evidence is lots of reasonably obvious bugs without activity for months.
@@ -177,15 +177,15 @@ However, there are several points that makes it less nice to use:
 - Low priority project for Facebook from an outsider point of view: ImmutableJS (another Facebook project) for example does not have an official Flow interface file.
 - The documentation is somewhat incomplete
 - Flow runs a server in the background which needs to be restarted manually, e.g. when adding a new interface file. Forgetting this will lead to some head-scratching error messages.
-- Flow is not super compatible with Babel and es6-lint. E.g. `function returns_func(): function` works in Flow but not in Babel because `function` is not a valid annotation in Babel (syntax error).
+- Flow is not super compatible with Babel and es6-lint. E.g. "`function returns_func(): function`" works in Flow but not in Babel because `function` is not a valid annotation in Babel (syntax error).
 
-Now that Flow supports ES6, it's mostly lacking in tooling and documentation.
+I.e. now that Flow supports ES6, it's mostly lacking in tooling and documentation.
 
 Writing interface files is OK (well maybe not all of [Lodash](https://lodash.com/docs) in one go) but it would be nice to have a good reference on how to write proper interface files, and to have Facebook provide interface files for their own projects.
-The only official files we found are part of Flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) and hasn't been updated yet to 0.14.
+The only official files we found are part of Flow itself: [https://github.com/facebook/flow/blob/master/lib/react.js](https://github.com/facebook/flow/blob/ed8f3d136d3432651fd39544d7ca40244a7423c2/lib/react.js) and those haven't been updated to React 0.14 yet.
 
 
-While this conclusion sounds overly critical, we really like the idea behind Flow and hope that its community gets larger. We are on the fence for using Flow in the product we are working on.
+While this article sounds overly critical, we really like the idea behind Flow and hope that its community grows. We are on the fence for using Flow in the product we are working on.
 
 
 We are going to work on the TypeScript article soon and the article should be available in a couple of weeks. In the meantime, if you are using Flow (or used it and gave up), we want your opinions!
