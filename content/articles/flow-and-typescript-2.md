@@ -98,11 +98,15 @@ Those props will be checked at compile time rather than runtime and will fail if
 ## Thoughts
 TypeScript and React are working really well together!
 
+The only issues we have encountered so far (and would love help to resolve!) are:
+
+- webpack building the previous version: adding an empty line and saving a file re-triggers a compilation but can be frustrating
+- no string enums: we want to keep human readable enum members but TypeScript only supports int enums
+
 I remember trying TypeScript with [ImmutableJS](http://facebook.github.io/immutable-js/) records months ago and giving up. With a more recent version of TypeScript, we now have both records working (they are used in the example repo if you are curious) and JSX.
 
-Moving to TypeScript is definitely more involved than moving to Flow where you can easily do file by file. On the other hand, the TypeScript community is much bigger and definitions are widely available and you can integrate the tools directly in your pipeline, as opposed to running Flow outside of it. It also doesn't do much inference compared to Flow.
+Moving to TypeScript is definitely more involved than moving to Flow where you can easily do file by file. On the other hand, the TypeScript community is much bigger and definitions are widely available and you can integrate the tools directly in your pipeline, as opposed to running Flow outside of it. It also doesn't do much inference compared to Flow. For reference, it took us 3h to move one of the product we are working on to TypeScript (without the `noImplicitAny: true` yet) while adding Flow took us around 25 minutes. The typing provided by TypeScript was much more complete though and revealed 4 bugs in the codebase.
 
 In terms of IDE support, TypeScript is probably better than Flow (with https://code.visualstudio.com/ for example) but in my PyCharm, both are good.
 
 I think TypeScript is the best bet right now despite believing that the Flow approach is the best one. What is lacking for Flow to catchup is community and tooling.
-
