@@ -5,9 +5,12 @@ Category: Dev
 Authors: Vincent
 
 
+*Reading time: ~10 minutes.*
+
 Continuing from the [first part that introduced Flow](https://blog.wearewizards.io/flow-and-typescript-part-1-flow), we are now going to have a look at [TypeScript](http://www.typescriptlang.org/).
 
 TypeScript is a superset of JavaScript that compiles to several targets, including ES5 and ES6. The current version of TypeScript (1.6 at the time of writing) now supports JSX, which was the main blocker for most people using React.
+<!-- PELICAN_END_SUMMARY -->
 
 One of the great advantages of TypeScript is  [DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped). This repo contains definitions for over a thousand JavaScript packages but more on that later.
 
