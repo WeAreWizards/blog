@@ -18,8 +18,6 @@ This article will focus on what it means for a UK based VAT registered company a
 
 
 # Business side
-The UK has put in place something called the VAT Mini One Stop Shop or VAT MOSS (https://www.gov.uk/guidance/register-and-use-the-vat-mini-one-stop-shop). This allows businesses to register in only one country and let it redistribute the money after filing a VAT return for other countries on a quarterly basis.
-
 If the customer is a business and is VAT registered, just getting the VAT number and checking it should be enough. However, companies paying without giving their VAT number or non-VAT registered ones should be treated as B2C.
 
 As mentioned in the introduction, we need to charge the VAT of the customer's country which means we need to locate them.
@@ -35,6 +33,9 @@ Note that the legislation requires to have two non-conflicting items of informat
 Without the non-conflicting information you have to reject the transaction. You could possibly ask for the user to send some proof by mail but that's a terrible user experience.
 
 If we manage to get customers to pay us, we then need to separate sales by country and apply the right VAT. This gives us the amount of tax we need to pay for each country.
+
+The UK has put in place something called the VAT Mini One Stop Shop or VAT MOSS (https://www.gov.uk/guidance/register-and-use-the-vat-mini-one-stop-shop). This allows businesses to register in only one country and let it redistribute the money after filing a VAT return for other countries on a quarterly basis with the amounts we calculated.
+
 
 # Coding
 Now that we have an overview of what the VAT system looks like, let's have a look at the solutions.
@@ -70,7 +71,7 @@ fastspring = (5.95 * 10000 / 100) + (0.63 * 100) # today's rate $0.95 > £0.63
 ```
 
 Stripe seems to give the best price but keep in mind you cand probably get better rates than the advertised one (at least for Paymill according to the employee I met ages ago).
-FastSpring is pretty damn expensive.
+FastSpring is pretty damn expensive but seems to have european VAT handled for us.
 
 ## Handling VAT
 
@@ -108,4 +109,4 @@ Out of those, Quaderno seems to be the best choice and is fairly cheap.
 ## Conclusion
 As a developer I am tempted to write my own version but Quaderno seems like a good fit and is cheap enough for a B2B SAAS that it might be worth avoiding the hassle of coding it.
 
-Looking for feedback really, quite curious of how people are doing on that side and if anything has experience with Quaderno and the others.
+We are looking for feedback really, quite curious of how people are doing on that side and if anything has experience with Quaderno and the others.
