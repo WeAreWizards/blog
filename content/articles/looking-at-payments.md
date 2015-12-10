@@ -1,6 +1,6 @@
-Title: Looking at payments solution for SAAS in Europe
+Title: Looking at payments solution for SaaS in Europe
 Date: 2015-12-10
-Short_summary: Payments in Europe are complicated due to recent VAT changes. I researched several SAAS that handle the new rules.
+Short_summary: Payments in Europe are complicated due to recent VAT changes. I researched several SaaS that handle the new rules.
 Category: Product
 Authors: Vincent
 
@@ -108,6 +108,6 @@ Out of those, Quaderno seems to be the best choice and is fairly cheap. Recurly 
 
 
 ## Conclusion
-As a developer I am tempted to write my own version but Quaderno seems like a good fit and is cheap enough for a B2B SAAS that it might be worth avoiding the hassle of coding it.
+As a developer I am tempted to write my own version but Quaderno seems like a good fit and is cheap enough for a B2B SaaS that it might be worth avoiding the hassle of coding it.
 
-We are more interested in feedback really, quite curious of how European SAAS are handling payments after this year's change in VAT.
+We are more interested in feedback really, quite curious of how European SaaS are handling payments after this year's change in VAT.
