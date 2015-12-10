@@ -1,6 +1,6 @@
 Title: Looking at payments solution for SAAS in Europe
 Date: 2015-12-08
-Short_summary: Payments in Europe are complicated due to VAT, I look at what a SAAS could use
+Short_summary: Payments in Europe are complicated due to recent VAT changes. I researched several SAAS that handle the new rules.
 Category: Product
 Authors: Vincent
 
@@ -11,7 +11,7 @@ As we are working on our product (if you work in an agency, we'd love to have a 
 Most Software As A Service business operate with monthly plans with various tiers. 
 In Europe, before 2015, the supplier would charge the VAT rate of their own country to their customers: for example if the supplier was based in the UK and the customer in France, the supplier would charge the UK VAT rate.
 
-Since 2015 however, the supplier now has to charge the VAT rate of the customer's country and report sales to that country. This change was made to prevent unfair competition from countries with a lower VAT rate, with big companies moving to Luxembourg for example. Regulators only forgot to set a lower limit (they are apparently now thinking of a £5k limit) and didn't think of SME or thought about it and decided that crippling european businesses would be a good idea.
+Since 2015 however, the supplier now has to charge the VAT rate of the customer's country and report sales to that country. This change was made to prevent unfair competition from countries with a lower VAT rate, with big companies moving to Luxembourg for example. Regulators only forgot to set a lower limit (they are apparently now thinking of a £5k limit) and didn't think of SME or thought about it and decided that crippling European businesses would be a good idea.
 Note that this change only applies to B2C customers.
 
 This article will focus on what it means for a UK based VAT registered company as it is our case.
