@@ -33,7 +33,7 @@ https://proppy.io/
 
 We're in the process of shaking out the last few bugs so we're calling
 it *beta*, but our friends and us have been using it for a while and
-are quite happy.
+they love it.
 
 We also have a few more features planned like electronic signatures,
 more content types (schedules, team descriptions, ...), and analytics.
