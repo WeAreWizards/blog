@@ -14,7 +14,6 @@ be super useful.
 
 We've taken our little tool and made it into a webapp so others can
 benefit from this, too.
-
 <!-- PELICAN_END_SUMMARY -->
 
 When sending out proposals we identified a few pain points:
@@ -29,7 +28,7 @@ When sending out proposals we identified a few pain points:
 * Collaboration via Dropbox is painful.
 
 We've addressed each of those and the result can be found here:
-https://proppy.io/
+[https://proppy.io/](https://proppy.io/)
 
 We're in the process of shaking out the last few bugs so we're calling
 it *beta*, but our friends and us have been using it for a while and
@@ -38,4 +37,4 @@ they love it.
 We also have a few more features planned like electronic signatures,
 more content types (schedules, team descriptions, ...), and analytics.
 
-Give it a try and let us know what you think!
+Give it a try and let us know what you think: [https://proppy.io/](https://proppy.io/)!
