@@ -11,7 +11,6 @@ Serving web requests should be fast and error free. There's
 that slower pages result in less browsing.
 
 We'll discuss a few strategies to keep requests fast.
-
 <!-- PELICAN_END_SUMMARY -->
 
 ## Main idea
