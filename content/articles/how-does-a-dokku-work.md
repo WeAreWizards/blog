@@ -1,7 +1,7 @@
 Title: How does a Dokku work?
 Date: 2015-01-19
 Short_summary: We explore how Dokku makes data from your Git repository appear as a web service.
-Category: Infra
+Category: Infrastructure
 Authors: Tom
 
 *Reading time: ~15 minutes.*

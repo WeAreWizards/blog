@@ -153,6 +153,7 @@ article {
 
   table {
     width: 100%;
+    margin-top: 1rem;
     border-collapse: collapse;
 
     th, td {
@@ -172,4 +173,9 @@ article {
 
 #disqus_thread {
   margin-bottom: 4rem;
+}
+
+.twitter-tweet {
+  margin: 0 auto;
+  margin-top: 2rem;
 }
