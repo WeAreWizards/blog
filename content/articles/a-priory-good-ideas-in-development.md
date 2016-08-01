@@ -1,7 +1,7 @@
 Title: Some a-priori good qualities of software development
 Date: 2015-03-29
 Short_summary: We look at some a-priori good ideas for software development, illustrated with graphs.
-Category: Asides
+Category: Misc
 Authors: Tom
 
 We software developers live in a time with an

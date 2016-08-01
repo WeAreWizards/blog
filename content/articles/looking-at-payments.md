@@ -52,6 +52,7 @@ There are a few alternatives here:
 Paymill is based in Europe. Stripe is extremely easy to setup and get started. I haven't used the other two so I can't comment on those but it seems you need to be approved for a merchant account for them which means some some wait.
 
 Here are the advertised rates (you might get a better one by talking with them):
+
 - Paymill: 2.95% + 0.28€
 - Braintree: 2.4% + 20p (first £30k free) for EU cards, 3.4% + 20p for non EU cards
 - Stripe: 1.9% + 20p for UK cards and 2.9% + 20p for foreign cards

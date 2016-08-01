@@ -14,7 +14,6 @@ into that either.
 
 Instead I want to focus on how researchers can run published source
 code on their own machines and arrive at the same results.
-
 <!-- PELICAN_END_SUMMARY -->
 
 ## The issue with Docker
