@@ -124,6 +124,8 @@ The immigration process seems pretty open and you should be able to relocate to 
 
 Since Singapore isn't in the EU, you also don't have to deal with EU things like VAT MOSS since the EU doesn't have jurisdiction over Singapore. Obviously, I'm not a lawyer so don't take my word for it.
 
+Singapore is not doing great on privacy though ([see report from Privacy International](https://www.privacyinternational.org/sites/default/files/Singapore_UPR_PI_submission_FINAL.pdf)) so we wouldn't be able to move there with Passopolis. I'm leaving this section there though since it could be ok for lots of companies.
+
 #### Taxes
 The Corporation tax rate depends on the income but has a ceiling of **17%**. In practice though, the rate is very low for 'small' income, aka most startups/companies:
 
