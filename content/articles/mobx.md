@@ -6,7 +6,7 @@ Authors: Vincent
 
 *Reading time: ~15 minutes.*
 
-[MobX](https://mobxjs.github.io/mobx/) is a state management library for JavaScript frontend application. This article is an introduction to it by example as well as showing how it works in a real app with TypeScript and is based on a talk I gave at the Osaka Web designers and developers meetup recently.
+[MobX](https://mobxjs.github.io/mobx/) (previously mobservable) is a state management library for JavaScript frontend application. This article introduces it with examples as well as showing how it works in a real app with TypeScript. It is based on a talk I gave at the Osaka Web designers and developers meetup recently.
 <!-- PELICAN_END_SUMMARY -->
 
 ## What is MobX and why should I look into it
@@ -14,15 +14,15 @@ Authors: Vincent
 ### MobX?
 Let's start by explaining what is MobX and how it works. It's presented as using Transparent Functional Reactive Programming.
 
-Now, FRP is a very controversial term as everyone seems to have their own definition of what it means so let's forget about that and look at a graph from the MobX docs (click on it to open in a new tab and get full size or open [this link](../images/mobx-flow.png)).
+Now, FRP is a very controversial term as everyone seems to have their own definition so let's forget about that and look at a illustration from the MobX docs (click on it to open in a new tab and get full size or open [this link](../images/mobx-flow.png)).
 
 
 <a href="../images/mobx-flow.png" target="_blank"><img width="100%" src="../images/mobx-flow.png"></a>
 
 In short, actions modify the state, which triggers reactions. Part of the state can be derived automatically, such as the number of tasks left to do in a TODO list to take the example of the picture above.
-What sets MobX apart from other Observable implementation is the transparent part. Reactions will observe which observables you are using and subscribe to them automatically, without you having to explicitely subscribe to those.
+What sets MobX apart from other Observable implementations is the transparent part. Reactions observe which observables you are using and subscribe to them automatically, without you having to explicitely subscribe to those.
 
-Before starting, a few things to mention:
+Before we continue, a few more things:
 
 - while some of the examples use React, MobX is not tied to any particular framework
 - it is written in TypeScript so you get type definitions out of the box if you are using TypeScript
@@ -202,7 +202,7 @@ It's currently the backbone of our frontend app in [Proppy](https://proppy.io) s
 
 If you are doing SSR, be aware that the way we handle stores shown below will not work for you.
 
-Converting Proppy to use MobX took about 4 days, numerous long-standing issues were fixed on the way and the end result was a deletion of around 1000 to 2000 lines (estimate as we also moved to use npm @types for typings in that branch).
+Converting Proppy to use MobX took about 4 days, numerous long-standing issues were fixed along the way and the end result was a deletion of around 1000 to 2000 lines (estimate as we also moved to use npm @types for typings in that branch).
 
 ### Stores
 Our stores are simple singleton classes that have observable properties.
@@ -348,6 +348,12 @@ For React, `mobx-react-devtools` is available and is pretty great. See the gif b
 
 I have mostly used the logging to inspect action and state changes while debugging and to spot erroneous updates and the re-rendering highlighter to figure out if some of our components were re-rendering too often.
 
+## Useful links
+
+- [Official docs](https://mobxjs.github.io/mobx/) and in particular [Common pitfalls & best practices](https://mobxjs.github.io/mobx/best/pitfalls.html) and [What does MobX reacts to?](https://mobxjs.github.io/mobx/best/react.html)
+- [In-depth explanation of MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.9aufnt6up)
+- [Understanding MobX and when to use it](https://github.com/mobxjs/mobx/issues/199)
+- [Example: real-life with router/ajax etc](https://github.com/mobxjs/mobx/issues/104)
 
 ## Conclusion
 
