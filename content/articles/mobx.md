@@ -1,6 +1,6 @@
 Title: A MobX introduction and case study
 Date: 2016-11-01
-Short_summary: Getting started with MobX and a real example
+Short_summary: Getting started with MobX and a case study
 Category: Dev
 Authors: Vincent
 
